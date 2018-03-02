@@ -51,7 +51,7 @@ namespace spat
         public void GenerateRadioQuestion(DataRow question)
         {
             var surveyQuestionHeader = new Label { Text = question["Question"].ToString() };
-            var surveyQuestionReason = new Button { Text = "Why are we asking you this personal question? ", ToolTip = question["QuestionDescription"].ToString() };
+            var surveyQuestionReason = new Button { Text = "Question Info", ToolTip = question["QuestionDescription"].ToString() };
 
             var surveyQuestion = new RadioButtonList();
             var answers = _surveyAnswerManger.GetExtractAnswers(question["Answer"].ToString());
