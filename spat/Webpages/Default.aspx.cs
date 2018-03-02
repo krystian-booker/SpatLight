@@ -68,7 +68,7 @@ namespace spat
         public void GenerateTextInputQuestion(DataRow question)
         {
             var surveyQuestionHeader = new Label { Text = question["Question"].ToString() };
-            var surveyQuestionReason = new Button { Text = "Why are we asking you this personal question? ", ToolTip = question["QuestionDescription"].ToString() };
+            var surveyQuestionReason = new Button { Text = "Question Info", ToolTip = question["QuestionDescription"].ToString() };
             var surveyQuestion = new TextBox();
 
             surveyBody.Controls.Add(surveyQuestionHeader);
@@ -81,7 +81,7 @@ namespace spat
         public void GenerateCheckBoxQuestion(DataRow question)
         {
             var surveyQuestionHeader = new Label { Text = question["Question"].ToString() };
-            var surveyQuestionReason = new Button { Text = "Why are we asking you this personal question? ", ToolTip = question["QuestionDescription"].ToString() };
+            var surveyQuestionReason = new Button { Text = "Question Info", ToolTip = question["QuestionDescription"].ToString() };
 
             var surveyQuestion = new CheckBoxList();
             var answers = _surveyAnswerManger.GetExtractAnswers(question["Answer"].ToString());
@@ -102,7 +102,7 @@ namespace spat
         public void GenerateFancyMedicalChart(DataRow question) //Change this name
         {
             var surveyQuestionHeader = new Label { Text = question["Question"].ToString() };
-            var surveyQuestionReason = new Button { Text = "Why are we asking you this personal question? ", ToolTip = question["QuestionDescription"].ToString() };
+            var surveyQuestionReason = new Button { Text = "Question Info", ToolTip = question["QuestionDescription"].ToString() };
 
             var surveyQuestion = new Image { ImageUrl = "~/Images/chart.png" };
 
@@ -111,6 +111,11 @@ namespace spat
             surveyBody.Controls.Add(new LiteralControl("<br/>"));
             surveyBody.Controls.Add(surveyQuestion);
             surveyBody.Controls.Add(new LiteralControl("<br/>"));
+        }
+
+        protected void chart_Click(object sender, ImageMapEventArgs e)
+        {
+            Console.WriteLine(e.PostBackValue.ToString());
         }
     }
 }
