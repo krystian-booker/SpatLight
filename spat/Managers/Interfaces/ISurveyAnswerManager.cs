@@ -8,6 +8,8 @@ namespace spat.Managers.Interfaces
 {
     public interface ISurveyAnswerManager
     {
-        List<ExtractedAnswer> ExtractAnswers(string Answers);
+        List<ExtractedAnswer> GetExtractAnswers(string Answers);
+        string GetAnswerMedicalDescription(string AnswerData);
+        string GetDiseaseImagePath(string AnswerData);
     }
 }

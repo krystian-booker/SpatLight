@@ -7,7 +7,7 @@ namespace spat.Managers
 {
     public class SurveyAnswerManager : ISurveyAnswerManager
     {
-        public List<ExtractedAnswer> ExtractAnswers(string Answers)
+        public List<ExtractedAnswer> GetExtractAnswers(string Answers)
         {
             var extractedResponses = new List<ExtractedAnswer>();
             var answers = Regex.Matches(Answers, @"\(([^)]*)\)");
@@ -23,6 +23,18 @@ namespace spat.Managers
                     });
             }
             return extractedResponses;
+        }
+
+        public string GetAnswerMedicalDescription(string AnswerData)
+        {
+            var descriptionAndImage = GetAnswerData(AnswerData);
+            return GetAnswer(descriptionAndImage);
+        }
+
+        public string GetDiseaseImagePath(string AnswerData)
+        {
+            var descriptionAndImage = GetAnswerData(AnswerData);
+            return GetAnswerData(descriptionAndImage);
         }
 
         private string CleanRawAnswer(string rawAnswer)
