@@ -22,6 +22,33 @@ namespace spat {
         protected global::System.Web.UI.UpdatePanel Upd;
         
         /// <summary>
+        /// Homunculus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage Homunculus;
+        
+        /// <summary>
+        /// chartThing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl chartThing;
+        
+        /// <summary>
+        /// btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageMap btn;
+        
+        /// <summary>
         /// surveyBody control.
         /// </summary>
         /// <remarks>
