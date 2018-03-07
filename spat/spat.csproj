@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\chart.png" />
+    <Content Include="Images\Disease.png" />
     <Content Include="Images\info.png" />
     <Content Include="jquery.maphilight.js" />
     <Content Include="Webpages\About.aspx" />

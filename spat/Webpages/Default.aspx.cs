@@ -113,9 +113,9 @@ namespace spat
             surveyBody.Controls.Add(new LiteralControl("<br/>"));
         }
 
-        protected void chart_Click(object sender, ImageMapEventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(e.PostBackValue.ToString());
+            var test = JointsSelected.Value;
         }
     }
 }
