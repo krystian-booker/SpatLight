@@ -183,9 +183,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="Managers\Interfaces\ISurverConnectionManager.cs" />
+    <Compile Include="Managers\Interfaces\IServerConnectionManager.cs" />
     <Compile Include="Managers\Interfaces\ISurveyAnswerManager.cs" />
-    <Compile Include="Managers\SurverConnectionManager.cs" />
+    <Compile Include="Managers\ServerConnectionManager.cs" />
     <Compile Include="Managers\SurveyAnswerManager.cs" />
     <Compile Include="Models\ExtractedAnswerModel.cs" />
     <Compile Include="Webpages\About.aspx.cs">

@@ -9,13 +9,13 @@ namespace spat.Webpages
 {
     public partial class Login : Page
     {
-        private ISurverConnectionManager _surverConnection;
+        private IServerConnectionManager _serverConnection;
         private ISurveyAnswerManager _surveyAnswerManger;
         private bool HomunculusAdded;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _surverConnection = new SurverConnectionManager();
+            _serverConnection = new ServerConnectionManager();
             _surveyAnswerManger = new SurveyAnswerManager();
         }
 
@@ -41,7 +41,7 @@ namespace spat.Webpages
 
         private void CheckLogin(string username, string password)
         {
-            var loginSuccesful = _surverConnection.ValidateLoginCredentials(username, password);
+            var loginSuccesful = _serverConnection.ValidateLoginCredentials(username, password);
             if (loginSuccesful.Rows.Count == 1)
             {
                 GenerateAdminPortal();
@@ -65,7 +65,7 @@ namespace spat.Webpages
             signIn.Visible = false;
             adminPortalForm.Visible = true;
 
-            var surveyQuestions = _surverConnection.GetSurveyQuestions();
+            var surveyQuestions = _serverConnection.GetSurveyQuestions();
 
             foreach (DataRow question in surveyQuestions.Rows)
             {

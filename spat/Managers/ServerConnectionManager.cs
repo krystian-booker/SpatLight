@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace spat.Managers
 {
-    public class SurverConnectionManager : ISurverConnectionManager
+    public class ServerConnectionManager : IServerConnectionManager
     {
         public DataTable GetSurveyQuestions()
         {

@@ -2,7 +2,7 @@
 
 namespace spat.Managers
 {
-    public interface ISurverConnectionManager
+    public interface IServerConnectionManager
     {
         DataTable GetSurveyQuestions();
         DataTable ValidateLoginCredentials(string username, string password);

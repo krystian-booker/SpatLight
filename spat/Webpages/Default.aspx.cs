@@ -11,13 +11,13 @@ namespace spat
 {
     public partial class _Default : Page
     {
-        private ISurverConnectionManager _surverConnection;
+        private IServerConnectionManager _serverConnection;
         private ISurveyAnswerManager _surveyAnswerManger;
         private Dictionary<int, List<ExtractedAnswer>> idAnswers = new Dictionary<int, List<ExtractedAnswer>>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _surverConnection = new SurverConnectionManager();
+            _serverConnection = new ServerConnectionManager();
             _surveyAnswerManger = new SurveyAnswerManager();
 
             GenerateSurvey();
@@ -25,7 +25,7 @@ namespace spat
 
         public void GenerateSurvey()
         {
-            var questions = _surverConnection.GetSurveyQuestions();
+            var questions = _serverConnection.GetSurveyQuestions();
 
             foreach (DataRow question in questions.Rows)
             {
