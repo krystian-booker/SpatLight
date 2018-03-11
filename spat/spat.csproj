@@ -131,10 +131,11 @@
     <Content Include="Images\Disease.png" />
     <Content Include="Images\info.png" />
     <Content Include="jquery.maphilight.js" />
-    <Content Include="Webpages\About.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="sqlScripts\defaultQuestions.sql" />
+    <Content Include="sqlScripts\spatDatabase.sql" />
     <Content Include="Webpages\Default.aspx" />
     <Content Include="Images\favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -145,6 +146,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -184,18 +186,11 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Managers\Interfaces\IServerConnectionManager.cs" />
-    <Compile Include="Managers\Interfaces\ISurveyAnswerManager.cs" />
     <Compile Include="Managers\ServerConnectionManager.cs" />
-    <Compile Include="Managers\SurveyAnswerManager.cs" />
+    <Compile Include="Models\AnswerModel.cs" />
     <Compile Include="Models\ExtractedAnswerModel.cs" />
-    <Compile Include="Webpages\About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Webpages\About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Models\QuestionModel.cs" />
     <Compile Include="Webpages\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

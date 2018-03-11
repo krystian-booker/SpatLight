@@ -1,10 +1,12 @@
-﻿using System.Data;
+﻿using spat.Models;
+using System.Collections.Generic;
+using System.Data;
 
 namespace spat.Managers
 {
     public interface IServerConnectionManager
     {
-        DataTable GetSurveyQuestions();
-        DataTable ValidateLoginCredentials(string username, string password);
+        List<QuestionModel> GetSurveyQuestions();
+        List<AnswerModel> GetSurveyAnswers(int QuestionId);
     }
 }
