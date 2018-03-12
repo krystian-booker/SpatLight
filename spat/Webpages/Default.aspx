@@ -1,109 +1,80 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Webpages/MasterPage/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="spat._Default" %>
+﻿<%@ Page Title="SPaT Light" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="spat._Default" %>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript">
-        var circles = [];
+<!DOCTYPE html>
 
-        $(document).ready(function () {
-            RefreshChart();
-        });
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        function RefreshChart() {
-            //If the chart exists, remove it to be recreated
-            var canvasChart = document.getElementById("myCanvas");
-            if (canvasChart) {
-                canvasChart.remove();
-            }
+    <title>SPaT Light</title>
 
-            //Recreate canavas
-            document.getElementById('myChart').innerHTML = '<canvas id="myCanvas" style="pointer-events: none;position: absolute;z - index: 2;"></canvas>';
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-            //Recreate drawing properties
-            var x, y, w, h;
-            var img = document.getElementById('Homunculus');
+    <!-- Custom Fonts -->
+    <link href="../../Content/mainFile.css" rel="stylesheet" />
+    <link href="../../Content/stylish-portfolio.css" rel="stylesheet" />
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" />
 
-            x = img.offsetLeft;
-            y = img.offsetTop;
-            w = img.clientWidth;
-            h = img.clientHeight;
+    <!-- Custom CSS -->
+    <link href="../../Content/mainFile.css" rel="stylesheet" />
 
-            var imgParent = img.parentNode;
+</head>
+<body id="page-top">
+    <!-- Header -->
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">SPaT Light</h1>
+            <h3 class="mb-5">
+                <em>A screening tool for Seronegative Arthrtis</em>
+            </h3>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="visible(question1)">Take Survey</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://www.mcmaster.ca">Information</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="showStuff()">Debug</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
 
-            var canvas = document.getElementById('myCanvas');
-            canvas.style.zIndex = 1;
-            canvas.style.left = x + 'px';
-            canvas.style.top = y + 'px';
-            canvas.setAttribute('width', w + 'px');
-            canvas.setAttribute('height', h + 'px');
+    <!-- Container holding all of the questions -->
+    <form runat="server">
+        <div id="allQuestions" runat="server">
+        </div>
+    </form>
 
-            DrawnCircle = canvas.getContext('2d');
-            DrawnCircle.fillStyle = 'red';
-            DrawnCircle.strokeStyle = 'red';
-            DrawnCircle.lineWidth = 2;
-        }
 
-        function JointSelected(jointName) {
-            //Get selected joint coordinates
-            var SelectedJoint;
-            $(jointName).each(function () {
-                SelectedJoint = $(this).attr('coords');
-            });
+    <!-- Footer -->
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="text-muted small mb-0">Copyright &copy; SPaT Light 2018</p>
+        </div>
+    </footer>
 
-            //If circle already drawn, remove, else draw
-            if (circles.indexOf(SelectedJoint) > -1) {
-                DeleteSelectedJoint(jointName)
-            }
-            else {
-                DrawSelectedJoint(SelectedJoint);
-            }
-        }
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+        <i class="fa fa-angle-up"></i>
+    </a>
 
-        function DrawSelectedJoint(coordinates) {
-            if (coordinates) {
-                circles.push(coordinates);
-            }
-            document.getElementById('<%=JointsSelected.ClientID %>').value = circles;
-            var test = document.getElementById('<%=JointsSelected.ClientID %>');
-            console.log(test);
-            DrawCanvasJoints()
-        }
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        function DeleteSelectedJoint(jointName) {
-            //Get selected joint coordinates
-            var coordinates;
-            $(jointName).each(function () {
-                coordinates = $(this).attr('coords');
-            });
+    <!-- Plugin JavaScript -->
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-            //If circles array contains joint, remove, redraw 
-            var deleteIndex = circles.indexOf(coordinates);
-            if (deleteIndex > -1) {
-                circles.splice(deleteIndex, 1);
-            }
-            DrawCanvasJoints();
-        }
+    <!-- Custom scripts for this template -->
+    <script src="../Scripts/CustomJS/stylish-portfolio.min.js"></script>
+    <script src="../Scripts/CustomJS/mainFile.js"></script>
+</body>
+</html>
 
-        function DrawCanvasJoints() {
-            RefreshChart();
-
-            //Draw all stored circles
-            var circlesLength = circles.length;
-            for (var i = 0; i < circlesLength; i++) {
-                var currentCircle = circles[i];
-                var mCoords = currentCircle.split(',');
-                var x, y, r;
-                x = mCoords[0];
-                y = mCoords[1];
-                r = mCoords[2];
-                DrawnCircle.beginPath();
-                DrawnCircle.arc(x, y, r, 0, 2 * Math.PI);
-                DrawnCircle.fill();
-                DrawnCircle.stroke();
-            }
-        }
-    </script>
-
-    <div style="overflow: hidden;">
+<%--<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<div style="overflow: hidden;">
         <div id="myChart"></div>
         <img src="/Images/chart.png" id="Homunculus" usemap="#img_map" width="246" height="305" style="position: relative;" />
         <map name="img_map">
@@ -182,4 +153,4 @@
     <div id="surveyBody" runat="server"></div>
     <asp:HiddenField ID="JointsSelected" runat="server" />
     <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-</asp:Content>
+</asp:Content>--%>
