@@ -58,9 +58,6 @@ function DrawSelectedJoint(coordinates) {
     if (coordinates) {
         circles.push(coordinates);
     }
-    document.getElementById('<%=JointsSelected.ClientID %>').value = circles;
-    var test = document.getElementById('<%=JointsSelected.ClientID %>');
-    console.log(test);
     DrawCanvasJoints()
 }
 
