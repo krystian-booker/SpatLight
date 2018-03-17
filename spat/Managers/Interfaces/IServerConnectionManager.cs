@@ -8,5 +8,6 @@ namespace spat.Managers
     {
         List<QuestionModel> GetSurveyQuestions();
         List<AnswerModel> GetSurveyAnswers(int QuestionId);
+        DataTable ValidateLoginCredentials(string username, string password);
     }
 }

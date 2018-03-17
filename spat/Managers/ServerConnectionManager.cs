@@ -95,7 +95,7 @@ namespace spat.Managers
             }
         }
 
-        private DataTable ValidateLoginCredentials(string username, string password)
+        public DataTable ValidateLoginCredentials(string username, string password)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
             {
