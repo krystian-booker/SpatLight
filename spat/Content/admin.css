@@ -67,6 +67,7 @@ i {
     padding-left: 5px;
     margin-bottom: 10px;
     background-color: #eee;
+    border-radius: 4px;
 }
 
 
@@ -169,18 +170,20 @@ i {
     padding: 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 10px;
+    text-align: left;
 }
 
 .question-header {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 900;
     margin-bottom: 10px;
     color: white;
+    text-align: center;
 }
 
 .lbl-qa {
     color: #ccc;
-    margin: 10px;
+    margin: 10px 0;
     font-weight: 900;
 }
 
@@ -189,34 +192,107 @@ i {
     width: 100%;
     padding-left: 8px;
     margin-bottom: 10px;
-    height: 30px;
+    height: 32px;
     background-color: #eee;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    resize: none;
+    border-radius: 4px;
 }
 
 .answer-input {
     width: 100%;
     padding-left: 8px;
-    height: 30px;
+    height: 32px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    resize: none;
+    border-radius: 4px;
+}
+
+.lbl-weight {
+    font-size: 14px;
+    text-align: right;
+}
+
+.weight-wrapper {
+    text-align: right;
+}
+
+.answer-weight {
+    padding-left: 8px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    resize: none;
+    border-radius: 4px;
+    width: 50px;
+    float: right;
     background-color: #eee;
+}
+
+.answer-box {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #888;
+    border: 1px solid #999;
+    border-radius: 3px;
 }
 
 @media (max-width: 768px) {
     .question-input {
-        height: 60px;
+        height: 64px;
     }
 }
 
 .btn-delete {
     background: rgba(0,0,0,0.2);
     color: #ccc;
-    border: 1px solid #666;
+    border: 1px solid #999;
     font-size: 14px;
     border-radius: 3px;
-    margin-bottom: 10px;
 }
 
     .btn-delete:hover {
-        background: rgba(90,0,0,0.2);
-        border: 1px solid #FF4136;
-        color: #FF4136;
+        background: rgba(90,20,20,0.6);
+        border: 1px solid #f44336;
+        color: #f44336;
+    }
+
+.add-box {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-add {
+    background: rgba(0,0,0,0.2);
+    color: #ccc;
+    border: 1px solid #999;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+    .btn-add:hover {
+        background: rgba(0,90,0,0.2);
+        border: 1px solid #01FF70;
+        color: #01FF70;
+    }
+
+.save-area {
+    text-align: right;
+}
+
+.btn-save {
+    margin-top: 20px;
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.2);
+    color: #ccc;
+    border: 1px solid #999;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+    .btn-save:hover {
+        background: rgba(0,0,90,0.2);
+        border: 1px solid #2294ff;
+        color: #3fb3ff;
     }
