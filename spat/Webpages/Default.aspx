@@ -22,42 +22,73 @@
     <link href="../../vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" />
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS and Icon -->
+    <link rel='icon' href='/Images/favicon.ico' type='image/x-icon'/ >
     <link href="../../Content/mainFile.css" rel="stylesheet" />
 
 </head>
 <body id="page-top">
+
+    <!-- Nav bar that scrolls -->
+    <div class="header" id="myHeader">
+        <img src="/Images/logo.png" height="70" id="mainLogo"/>
+    </div>
+
     <!-- Header -->
-    <header class="masthead d-flex">
-        <div class="container text-center my-auto">
-            <h1 class="mb-1">SPaT Light</h1>
-            <h3 class="mb-5">
-                <em>A screening tool for Seronegative Arthrtis</em>
-            </h3>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="visible(question1)">Take Survey</a>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://www.mcmaster.ca">Information</a>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="showStuff()">Debug</a>
-        </div>
-        <div class="overlay"></div>
-    </header>
+    <div id="banner-top">
+        <header class="masthead d-flex">
+            <div class="container text-center my-auto">
+                <h1 class="mb-1"><img src="/Images/alt-logo.png" class="img-fluid"/></h1>
+                <h3 class="m-5">
+                    <em>Seronegative Arthritis Detection Tool</em>
+                </h3>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
+                    onclick="visible(question1); hideTop(); visible(myHeader); visible(tempProgressBar);" >Take Survey</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://www.mcmaster.ca">Information</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="showStuff()">Debug</a>
+            </div>
+            <div class="overlay"></div>
+        </header>
+    </div>
 
-    <!-- Container holding all of the questions -->
-    <form runat="server">
-        <div id="allQuestions" runat="server">
-        </div>
-    </form>
+    <!-- Two columns on the page, right and left. 
+        Right is the progress bar, left is the content.
+    -->
+    <div class="container" id="questionsAndProgress">
+        <div class="row">
+            <!-- Left side of the page -->
+            <div class="col-sm-10">
+              <!-- Container holding all of the questions -->
+              <form runat="server">
+                  <div id="allQuestions" runat="server">
+                  </div>
+              </form>
+            </div>
 
+            <!-- Right side of the page -->
+            <div class="col-sm-2">
+                <div class="sidenav">
+                   <!-- Progress bar that scrolls and updates -->
+                    <img src="/Images/progress.png" id="tempProgressBar"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <%-- <div class="progress">
+                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                        aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                        40% Complete (success)
+                        </div>
+                    </div>--%>
+    
+        
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
-            <p class="text-muted small mb-0">Copyright &copy; SPaT Light 2018</p>
+            <p class="text-muted small mb-0">Copyright &copy; SpAT Light 2018</p>
         </div>
     </footer>
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-        <i class="fa fa-angle-up"></i>
-    </a>
 
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>

@@ -51,16 +51,16 @@ namespace spat
 
             var htmlObjectList = new List<object>
             {
-                //Question
+                //Question type 1
                 new LiteralControl(string.Format("<section class=\"content-section\" class=\"questionTypeTwo\" id=\"question{0}\">", question.QuestionId)),
                 new LiteralControl("<div class=\"container text-center\">"),
                 new LiteralControl("<div class=\"row\">"),
                 new LiteralControl("<div class=\"col-lg-10 mx-auto\">"),
-                new LiteralControl(string.Format("<h2>{0}</h2>", question.QuestionText)),
+                new LiteralControl(string.Format("<h2 class=\"not_bold\">Question {0}/14</h2>", question.QuestionId)),
                 new LiteralControl("<p class=\"lead mb-2\">"),
                 new LiteralControl(string.Format("<a href=\"\" data-toggle=\"modal\" data-target=\"#whyAsking{0}\">Why are we asking this?</a>", question.QuestionId)),
                 new LiteralControl("</p>"),
-                new LiteralControl("<p class=\"lead m-5\">Please select from the list which best describes you<br>"),
+                new LiteralControl(string.Format("<p class=\"lead m-5 question_bold\">{0}<br>", question.QuestionText)),
                 new LiteralControl("<div class=\"info mb-4\" align=\"center\">"),
                 surveyAnswerList,
                 new LiteralControl("</div>"),
@@ -97,6 +97,7 @@ namespace spat
         {
             var previousQuestionId = question.QuestionId;
             var nextQuestionId = question.QuestionId;
+            //can you add something here that totals the number of questions so that I can dynamically put it into the code?
             previousQuestionId--;
             nextQuestionId++;
 
@@ -104,15 +105,15 @@ namespace spat
 
             var htmlObjectList = new List<object>
             {
-                //Question
+                //Question type 2
                 new LiteralControl(string.Format("<section class=\"content-section\" class=\"questionTypeThree\" id=\"question{0}\">", question.QuestionId)),
                 new LiteralControl("<div class=\"container text-center\">"),
                 new LiteralControl("<div class=\"row\">"),
                 new LiteralControl("<div class=\"col-lg-10 mx-auto\">"),
-                new LiteralControl(string.Format("<h2>{0}</h2>", question.QuestionText)),
+                new LiteralControl(string.Format("<h2 class=\"not_bold\">Question {0}/14</h2>", question.QuestionId)),
                 new LiteralControl("<p class=\"lead mb-2\">"),
                 new LiteralControl(string.Format("<a href=\"\" data-toggle=\"modal\" data-target=\"#whyAsking{0}\">Why are we asking this?</a>", question.QuestionId)),
-                new LiteralControl("<p class=\"lead m-5\">Please select multiple from the list which best describes you<br>"),
+                new LiteralControl(string.Format("<p class=\"lead m-5 question_bold\">{0}<br>", question.QuestionText)),
                 new LiteralControl("<div class=\"info mb-4\" align=\"center\">"),
                 surveyAnswerList,
                 new LiteralControl("</div>"),
@@ -155,15 +156,15 @@ namespace spat
 
             var htmlObjectList = new List<object>
             {
-                //Question
+                //Question type 3
                 new LiteralControl(string.Format("<section class=\"content-section\" class=\"questionTypeOne\" id=\"question{0}\">", question.QuestionId)),
                 new LiteralControl("<div class=\"container text-center\">"),
                 new LiteralControl("<div class=\"row\">"),
                 new LiteralControl("<div class=\"col-lg-10 mx-auto\">"),
-                new LiteralControl(string.Format("<h2>{0}</h2>", question.QuestionText)),
+                new LiteralControl(string.Format("<h2 class=\"not_bold\">Question {0}/14</h2>", question.QuestionId)),
                 new LiteralControl("<p class=\"lead mb-2\">"),
                 new LiteralControl(string.Format("<a href=\"\" data-toggle=\"modal\" data-target=\"#whyAsking{0}\">Why are we asking this?</a>", question.QuestionId)),
-                new LiteralControl("<p class=\"lead m-5\">Where does it hurt? Click on <strong>ALL</strong> of the joints where you experience pain.<br>"),
+                new LiteralControl("<p class=\"lead m-5 question_bold\">Where does it hurt? Click on <strong>ALL</strong> of the joints where you experience pain.<br>"),
                 new LiteralControl("<div class=\"info\">"),
 
                 //Homuculous chart

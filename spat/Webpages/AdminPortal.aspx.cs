@@ -1,7 +1,6 @@
 ﻿using spat.Managers;
 using spat.Models;
 using System;
-using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,6 +14,7 @@ namespace spat.Webpages
         protected void Page_Load(object sender, EventArgs e)
         {
             _serverConnection = new ServerConnectionManager();
+            tbUserName.Focus();
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace spat.Webpages
             var result = ValidInput(username);
             result &= ValidInput(password);
 
-            if(result)
+            if (result)
             {
                 CheckLogin(username, password);
             }
@@ -55,7 +55,7 @@ namespace spat.Webpages
 
         private bool ValidInput(string input)
         {
-            return !(input.IndexOfAny(new char[] {'*','&','#',';','-','%','/','\'','!','@','$','(',')','='}) != -1);
+            return !(input.IndexOfAny(new char[] { '*', '&', '#', ';', '-', '%', '/', '\'', '!', '@', '$', '(', ')', '=' }) != -1);
         }
 
         private void GenerateAdminPortal()
@@ -67,14 +67,32 @@ namespace spat.Webpages
 
             foreach (var question in surveyQuestions)
             {
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"question\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-12\">"));
                 GenerateAdminPortalHeader(question);
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-12\">"));
                 GenerateQuestionEditor(question);
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-12\">"));
+                GenerateQuestionDescriptionEditor(question);
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-12\">"));
 
-
-                var answerLabel = new Label { Text = "Answers:" };
-                answerLabel.Font.Bold = true;
+                var answerLabel = new Label { Text = "Answers" };
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"lbl-qa\">"));
                 adminPortalForm.Controls.Add(answerLabel);
-                adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
 
                 var answers = _serverConnection.GetSurveyAnswers(question.QuestionId);
 
@@ -83,11 +101,24 @@ namespace spat.Webpages
                     switch (question.QuestionType)
                     {
                         case 0:
-                            var surveyAnswerType0 = new TextBox { Text = answer.AnswerText, TextMode = TextBoxMode.MultiLine, Width = 500, Height = 30 };
-                            var answerDelete = new Button { Text = "Delete", CommandName = "DeleteAnswer()" };
+                            var surveyAnswerType0 = new TextBox { Text = answer.AnswerText, TextMode = TextBoxMode.MultiLine, CssClass = "answer-input" };
+                            var surveyAnswerWeightLabel = new Label { Text = "Weight" };
+                            var surveyAnswerWeightType0 = new TextBox { Text = answer.AnswerWeight, TextMode = TextBoxMode.SingleLine, CssClass = "answer-weight" };
+                            var answerDelete = new Button { Text = "Delete", CommandName = "DeleteAnswer()", CssClass = "btn-delete" };
+                            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">"));
+                            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"answer-box\">"));
                             adminPortalForm.Controls.Add(surveyAnswerType0);
+                            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row\">"));
+                            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-9 lbl-weight\">"));
+                            adminPortalForm.Controls.Add(surveyAnswerWeightLabel);
+                            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-3 weight-wrapper\">"));
+                            adminPortalForm.Controls.Add(surveyAnswerWeightType0);
+                            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
                             adminPortalForm.Controls.Add(answerDelete);
-                            adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+                            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
                             break;
                         case 1:
                             //GenerateTextInputQuestion(question);
@@ -108,33 +139,68 @@ namespace spat.Webpages
 
 
                 }
+                var answerAdd = new Button { Text = "Add", CommandName = "AddAnswer()", CssClass = "btn-add" };
+                var saveChanges = new Button { Text = "Save Changes", CommandName = "SaveChanges()", CssClass = "btn-save" };
 
-                adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-3\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"answer-box add-box\">"));
+                adminPortalForm.Controls.Add(answerAdd);
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"row save-area\">"));
+                adminPortalForm.Controls.Add(new LiteralControl("<div class=\"col-lg-12\">"));
+                adminPortalForm.Controls.Add(saveChanges);
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+                adminPortalForm.Controls.Add(new LiteralControl("</div>"));
             }
         }
 
         private void GenerateAdminPortalHeader(QuestionModel question)
         {
-            var questionIdLabel = new Label { Text = string.Format("Question {0}: ", question.QuestionId) };
-            questionIdLabel.Font.Bold = true;
+            var questionIdLabel = new Label { Text = string.Format("Question {0} ", question.QuestionId) };
 
-            var questionLabel = new Label { Text = "Question:" };
-            questionLabel.Font.Bold = true;
+            var questionLabel = new Label { Text = "Question" };
 
+            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"question-header\">"));
             adminPortalForm.Controls.Add(questionIdLabel);
-            adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"lbl-qa\">"));
             adminPortalForm.Controls.Add(questionLabel);
-            adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
         }
 
         private void GenerateQuestionEditor(QuestionModel question)
         {
-            var surveyQuestion = new TextBox { Text = question.QuestionText, TextMode = TextBoxMode.MultiLine, Width=500, Height= 30 };
+            var surveyQuestion = new TextBox { Text = question.QuestionText, TextMode = TextBoxMode.MultiLine, CssClass = "question-input" };
             adminPortalForm.Controls.Add(surveyQuestion);
-            adminPortalForm.Controls.Add(new LiteralControl("<br/>"));
+        }
+
+        private void GenerateQuestionDescriptionEditor(QuestionModel question)
+        {
+            var surveyQuestionDescription = new TextBox { Text = question.QuestionDescription, TextMode = TextBoxMode.MultiLine, CssClass = "question-input" };
+
+            var questionDescriptionLabel = new Label { Text = "Question Description" };
+
+            adminPortalForm.Controls.Add(new LiteralControl("<div class=\"lbl-qa\">"));
+            adminPortalForm.Controls.Add(questionDescriptionLabel);
+            adminPortalForm.Controls.Add(new LiteralControl("</div>"));
+            adminPortalForm.Controls.Add(surveyQuestionDescription);
         }
 
         private void DeleteAnswer()
+        {
+
+        }
+
+        private void AddAnswer()
+        {
+
+        }
+
+        private void SaveChanges()
         {
 
         }
