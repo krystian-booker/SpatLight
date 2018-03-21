@@ -148,6 +148,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\CustomJS\admin.js" />
     <Content Include="Scripts\CustomJS\HomunculusChart.js" />
     <Content Include="Scripts\CustomJS\mainFile.js" />
     <Content Include="Scripts\CustomJS\stylish-portfolio.js" />
