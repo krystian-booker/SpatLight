@@ -134,6 +134,8 @@
     <Content Include="Images\Disease.png" />
     <Content Include="Images\homo.png" />
     <Content Include="Images\info.png" />
+    <Content Include="Images\loop.mov" />
+    <Content Include="Images\loop.mp4" />
     <Content Include="Images\placeholder.png" />
     <Content Include="Images\progress.png" />
     <Content Include="Images\q1.PNG" />
