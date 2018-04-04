@@ -36,19 +36,23 @@
 
     <!-- Header -->
     <div id="banner-top">
-        <header class="masthead d-flex">
+        <!-- The video -->
+        <video autoplay muted loop id="myVideo" class="embed-responsive embed-responsive-1by1">
+            <source src="/Images/loop.mp4" type="video/mp4">
+        </video>
+
+        <div class="content">
             <div class="container text-center my-auto">
-                <h1 class="mb-1"><img src="/Images/alt-logo.png" class="img-fluid"/></h1>
-                <h3 class="m-5">
-                    <em>Seronegative Arthritis Detection Tool</em>
-                </h3>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
-                    onclick="visible(question1); hideTop(); visible(myHeader); visible(tempProgressBar);" >Take Survey</a>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://www.mcmaster.ca">Information</a>
-                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="showStuff()">Debug</a>
+            <h1 class="mb-1"><img src="/Images/alt-logo.png" class="img-fluid" id="spatLogo"/></h1>
+            <h3 class="m-5">
+                <em>Seronegative Arthritis Detection Tool</em>
+            </h3>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
+                onclick="visible(question1); hideTop(); visible(myHeader); visible(tempProgressBar);" >Take Survey</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="http://www.mcmaster.ca">Information</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" onclick="showStuff()">Debug</a>
             </div>
-            <div class="overlay"></div>
-        </header>
+        </div> 
     </div>
 
     <!-- Two columns on the page, right and left. 
@@ -74,15 +78,7 @@
             </div>
         </div>
     </div>
-
-   <%-- <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                        aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                        40% Complete (success)
-                        </div>
-                    </div>--%>
-    
-        
+   
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
