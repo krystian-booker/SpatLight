@@ -5,12 +5,18 @@ $('document').ready(function () {
 
 function visible(id) {
     $(id).fadeIn();
-    console.log("working button");
 }
 
 function hideTop() {
     $('#banner-top').hide();
     $(".header").css("visibility", "visible");
+}
+
+function goBack() {
+    $("#banner-top").show();
+    $("#resourcesSection").hide();
+    $("#myHeader").hide();
+
 }
 
 function hide() {
