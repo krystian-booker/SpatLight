@@ -146,7 +146,6 @@
     <Content Include="Images\q6.PNG" />
     <Content Include="Images\q7.PNG" />
     <Content Include="Images\q8.PNG" />
-    <Content Include="jquery.maphilight.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />

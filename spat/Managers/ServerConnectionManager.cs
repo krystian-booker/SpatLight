@@ -29,6 +29,41 @@ namespace spat.Managers
             return questionList;
         }
 
+        public void SaveSurveyQuestions(List<QuestionModel> questionList, List<AnswerModel> AnswerList)
+        {
+            foreach (var question in questionList)
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+                {
+                    con.Open();
+                    SqlCommand com = new SqlCommand("update SurveyQuestions set QuestionText = @questionText, QuestionDescription = @QuestionDescription where QuestionId = @QuestionId");
+                    com.Parameters.AddWithValue("@questionText", question.QuestionText);
+                    com.Parameters.AddWithValue("@QuestionDescription", question.QuestionDescription);
+                    com.Parameters.AddWithValue("@QuestionId", question.QuestionId);
+                    com.CommandType = CommandType.Text;
+                    com.Connection = con;
+                    com.ExecuteNonQuery();
+                }
+            }
+
+            foreach (var answer in AnswerList)
+            {
+                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+                {
+                    con.Open();
+                    SqlCommand com = new SqlCommand("update Answers set AnswerText = @answerText, AnswerDescription = @answerDescription, AnswerWeight = @answerWeight, AnswerImagePath = @answerImagePath where AnswerId = @answerId");
+                    com.Parameters.AddWithValue("@answerText", answer.AnswerText);
+                    com.Parameters.AddWithValue("@answerDescription", string.IsNullOrEmpty(answer.AnswerDescription) ? string.Empty : answer.AnswerDescription);
+                    com.Parameters.AddWithValue("@answerWeight", answer.AnswerWeight);
+                    com.Parameters.AddWithValue("@answerImagePath", string.IsNullOrEmpty(answer.AnswerImagePath) ? string.Empty : answer.AnswerImagePath);
+                    com.Parameters.AddWithValue("@answerId", answer.AnswerId);
+                    com.CommandType = CommandType.Text;
+                    com.Connection = con;
+                    com.ExecuteNonQuery();
+                }
+            }
+        }
+
         public List<AnswerModel> GetSurveyAnswers(int QuestionId)
         {
             var answersRaw = GetSurveyAnswersRaw(QuestionId);
@@ -48,6 +83,27 @@ namespace spat.Managers
             }
 
             return answerList;
+        }
+
+        public DataTable ValidateLoginCredentials(string username, string password)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            {
+                con.Open();
+
+                SqlCommand com = new SqlCommand("select 1 from Admin where id = @username and Password = @password");
+                com.Parameters.AddWithValue("@username", username);
+                com.Parameters.AddWithValue("@password", password);
+                com.CommandType = CommandType.Text;
+                com.Connection = con;
+
+                using (SqlDataAdapter da = new SqlDataAdapter(com))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
+            }
         }
 
         #endregion Public
@@ -83,27 +139,6 @@ namespace spat.Managers
 
                 SqlCommand com = new SqlCommand("Select * from Answers where QuestionId = @questonId");
                 com.Parameters.AddWithValue("@questonId", questionId);
-                com.CommandType = CommandType.Text;
-                com.Connection = con;
-
-                using (SqlDataAdapter da = new SqlDataAdapter(com))
-                {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
-                }
-            }
-        }
-
-        public DataTable ValidateLoginCredentials(string username, string password)
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
-            {
-                con.Open();
-
-                SqlCommand com = new SqlCommand("select 1 from Admin where id = @username and Password = @password");
-                com.Parameters.AddWithValue("@username", username);
-                com.Parameters.AddWithValue("@password", password);
                 com.CommandType = CommandType.Text;
                 com.Connection = con;
 
