@@ -129,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\admin.css" />
+    <Content Include="Content\admindark.css" />
     <Content Include="Content\mainFile.css" />
     <Content Include="Content\stylish-portfolio.css" />
     <Content Include="Images\chart.png" />
