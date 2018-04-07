@@ -85,6 +85,37 @@ namespace spat.Managers
             return answerList;
         }
 
+        public List<Stats> GetAnswerStats()
+        {
+            var dataTable = new DataTable();
+            var statList = new List<Stats>();
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            {
+
+                connection.Open();
+                var sqlCommand = new SqlCommand("select stats from Answers")
+                {
+                    CommandType = CommandType.Text,
+                    Connection = connection
+                };
+
+                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
+                {
+                    dataAdapter.Fill(dataTable);
+                }
+            }
+
+            foreach (DataRow stats in dataTable.Rows)
+            {
+                statList.Add(new Stats
+                    {
+                        statNum = (int)stats["stats"],
+                    });
+            }
+            return statList;
+        }
+
         public DataTable ValidateLoginCredentials(string username, string password)
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))

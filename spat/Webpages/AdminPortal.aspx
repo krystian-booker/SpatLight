@@ -21,13 +21,6 @@
       </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-right ml-auto">
-                    <li class="nav-item dropdown">Manage
-             <div class="dropdown-content">
-                 <a href="#">Questions</a>
-                 <a href="#">Resources</a>
-                 <a href="#">Password</a>
-             </div>
-                    </li>
                     <li class="nav-item">
                         <a href="AdminStatistics">Statistics</a>
                     </li>
@@ -47,7 +40,7 @@
                     <div class="login-form mx-auto">
                         <div class="row">
                             <div runat="server" id="signIn" visible="true">
-                                <h5>Login</h5>
+                            <h5>Login</h5>
                                 <asp:Label class="lbl-input" ID="lblUserName" runat="server" Text="Username"></asp:Label><br />
                                 <asp:TextBox class="txt-input" ID="tbUserName" runat="server"></asp:TextBox><br />
                                 <asp:Label class="lbl-input" ID="lblPassword" runat="server" Text="Password"></asp:Label><br />
