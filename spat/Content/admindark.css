@@ -5,8 +5,8 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    color: #222;
-    background-color: #eee;
+    color: #eee;
+    background-color: #aaa;
 }
 
 html {
@@ -32,12 +32,12 @@ h6 {
     font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     padding-top: 5px;
     padding-bottom: 5px;
-    background: #359;
-    color: #fff;
+    background: #444;
+    color: #eee;
 }
 
 i {
-    color: #222;
+    color: #eee;
 }
 
 .no-border {
@@ -50,17 +50,13 @@ i {
 }
 
 .btn-login {
-    background: rgba(0,0,0,0.2);
-    color: #333;
-    border: 1px solid #555;
-    font-size: 14px;
-    border-radius: 3px;
+    background-color: #777;
+    border: 1px solid #ccc;
+    color: white;
 }
 
     .btn-login:hover {
-        background: rgba(120,220,120,0.2);
-        border: 1px solid #017F30;
-        color: #017F30;
+        background-color: #888;
     }
 
 .lbl-input {
@@ -70,17 +66,17 @@ i {
 .txt-input {
     padding-left: 5px;
     margin-bottom: 10px;
-    background-color: #222;
+    background-color: #eee;
     border-radius: 4px;
 }
 
 
 .login-form {
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: #555;
+    border: 2px solid #666;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 20px 50px 20px 50px;
-    color: #444;
+    color: #ececec;
     border-radius: 10px;
 }
 
@@ -92,11 +88,11 @@ i {
 .nav-item {
     padding: 8px;
     margin-left: 20px;
-    color: #fff;
+    color: #ddd;
 }
 
     .nav-item a {
-        color: #fff;
+        color: #ddd;
         text-decoration: none;
         display: block;
     }
@@ -109,21 +105,21 @@ i {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #57b;
+    background-color: #555;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
     .dropdown-content a {
-        color: #fff;
+        color: #ccc;
         padding: 11px 16px;
         text-decoration: none;
         display: block;
     }
 
         .dropdown-content a:hover {
-            background-color: #46a;
+            background-color: #555;
             color: white;
         }
 
@@ -141,7 +137,7 @@ i {
     .nav-item:hover {
         color: white;
         outline: none;
-        background-color: #248;
+        background-color: #666;
     }
 }
 
@@ -152,7 +148,7 @@ i {
         position: relative;
         min-width: 100px;
         box-shadow: none;
-        background-color: #46a;
+        background-color: #444;
         padding-left: 25px;
     }
 
@@ -161,15 +157,16 @@ i {
     }
 
         .nav-item a:hover {
-            color: #cef;
+            color: white;
             outline: none;
+            background-color: #666;
         }
 }
 
 /* Manage Survey Questions */
 .question {
     margin-bottom: 50px;
-    background-color: #def;
+    background-color: #777;
     padding: 30px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 10px;
@@ -180,12 +177,12 @@ i {
     font-size: 26px;
     font-weight: 900;
     margin-bottom: 10px;
-    color: #359;
+    color: white;
     text-align: center;
 }
 
 .lbl-qa {
-    color: #359;
+    color: #ccc;
     margin: 10px 0;
     font-weight: 900;
 }
@@ -196,9 +193,9 @@ i {
     padding-left: 8px;
     margin-bottom: 10px;
     height: 32px;
-    background-color: #fff;
+    background-color: #eee;
     box-sizing: border-box;
-    border: 2px solid #9cf;
+    border: 2px solid #ccc;
     resize: none;
     border-radius: 4px;
 }
@@ -208,7 +205,7 @@ i {
     padding-left: 8px;
     height: 32px;
     box-sizing: border-box;
-    border: 2px solid #9cf;
+    border: 2px solid #ccc;
     resize: none;
     border-radius: 4px;
 }
@@ -225,20 +222,19 @@ i {
 .answer-weight {
     padding-left: 8px;
     box-sizing: border-box;
-    border: 2px solid #359;
+    border: 2px solid #ccc;
     resize: none;
     border-radius: 4px;
     width: 50px;
     float: right;
-    background-color: #222;
+    background-color: #eee;
 }
 
 .answer-box {
-    color: #333;
     padding: 15px;
     margin-bottom: 15px;
-    background-color: #f6f6f6;
-    border: 2px solid #9cf;
+    background-color: #888;
+    border: 1px solid #999;
     border-radius: 3px;
 }
 
@@ -250,8 +246,8 @@ i {
 
 .btn-delete {
     background: rgba(0,0,0,0.2);
-    color: #333;
-    border: 1px solid #555;
+    color: #ccc;
+    border: 1px solid #999;
     font-size: 14px;
     border-radius: 3px;
 }
@@ -269,8 +265,8 @@ i {
 
 .btn-add {
     background: rgba(0,0,0,0.2);
-    color: #333;
-    border: 1px solid #555;
+    color: #ccc;
+    border: 1px solid #999;
     font-size: 14px;
     border-radius: 3px;
 }
@@ -281,20 +277,6 @@ i {
         color: #01FF70;
     }
 
-.btn-image {
-    background: rgba(0,0,0,0.2);
-    color: #333;
-    border: 1px solid #555;
-    font-size: 14px;
-    border-radius: 3px;
-}
-
-    .btn-image:hover {
-        background: rgba(120,220,120,0.2);
-        border: 1px solid #017F30;
-        color: #017F30;
-    }
-
 .save-area {
     text-align: right;
 }
@@ -302,15 +284,15 @@ i {
 .btn-save {
     margin-top: 20px;
     padding: 5px 10px;
-    background: rgba(0,0,0,0.1);
-    color: #333;
-    border: 1px solid #333;
+    background: rgba(0,0,0,0.2);
+    color: #ccc;
+    border: 1px solid #999;
     font-size: 16px;
     border-radius: 3px;
 }
 
     .btn-save:hover {
-        background: rgba(150,150,250,0.2);
-        border: 1px solid #0f63ef;
-        color: #0f63ef;
+        background: rgba(0,0,90,0.2);
+        border: 1px solid #2294ff;
+        color: #3fb3ff;
     }
