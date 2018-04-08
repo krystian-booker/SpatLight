@@ -33,7 +33,6 @@ function hide() {
     $('#question11').hide();
     $('#question12').hide();
     $('#question13').hide();
-    console.log("working");
 }
 
 function showStuff() {

@@ -218,5 +218,6 @@
     <script src="../Scripts/CustomJS/stylish-portfolio.min.js"></script>
     <script src="../Scripts/CustomJS/mainFile.js"></script>
     <script src="../Scripts/CustomJS/HomunculusChart.js"></script>
+    <script src="../Scripts/CustomJS/SurveyAlgorithm.js"></script>
 </body>
 </html>

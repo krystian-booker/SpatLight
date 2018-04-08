@@ -66,7 +66,7 @@ namespace spat
                 new LiteralControl("</div>"),
                 new LiteralControl("</p>"),
                 new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" style=\"margin: 5px;\">Previous</a>", previousQuestionId)),
-                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0})\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId)),
+                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});Question{1}();\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId, question.QuestionId)),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
@@ -119,7 +119,7 @@ namespace spat
                 new LiteralControl("</div>"),
                 new LiteralControl("</p>"),
                 new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" style=\"margin: 5px;\">Previous</a>", previousQuestionId)),
-                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0})\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId)),
+                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});Question{1}();\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId, question.QuestionId)),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
@@ -170,7 +170,7 @@ namespace spat
                 //Homuculous chart
                 //new LiteralControl("<img src=\"../Images/homo.png\" height=\"500em\" width=\"400em\"/>"),
                 new LiteralControl("<div id=\"myChart\"></div>"),
-                new LiteralControl("<img src=\"/Images/chart.png\" id=\"Homunculus\" usemap=\"#img_map\" width=\"246\" height=\"305\" style=\"position: relative;\" />"),
+                new LiteralControl("<img src=\"/Images/homo.png\" id=\"Homunculus\" usemap=\"#img_map\" width=\"246\" height=\"305\" style=\"position: relative;\" />"),
                 new LiteralControl("<map name=\"img_map\">"),
                 new LiteralControl("<area coords=\"110,35,6\" shape=\"circle\" href=\"javascript:JointSelected(leftCheek)\" id=\"leftCheek\">"),
                 new LiteralControl("<area coords=\"131,33,6\" shape=\"circle\" href=\"javascript:JointSelected(rightCheek)\" id=\"rightCheek\">"),
@@ -250,7 +250,7 @@ namespace spat
                 new LiteralControl("</div>"),
                 new LiteralControl("</p>"),
                 new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" style=\"margin: 5px;\">Previous</a>", previousQuestionId)),
-                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0})\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId)),
+                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId)),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
@@ -297,7 +297,11 @@ namespace spat
 
         private RadioButtonList GenerateRadioButtonList(int QuestionId)
         {
-            var surveyAnswerList = new RadioButtonList();
+            var surveyAnswerList = new RadioButtonList
+            {
+                ID = "answerGroup" + QuestionId
+            };
+
             var answers = _serverConnection.GetSurveyAnswers(QuestionId);
 
             foreach (var answer in answers)
@@ -308,7 +312,11 @@ namespace spat
 
         private CheckBoxList GenerateCheckBoxList(int QuestionId)
         {
-            var surveyAnswerList = new CheckBoxList();
+            var surveyAnswerList = new CheckBoxList
+            {
+                ID = "answerGroup" + QuestionId
+            };
+
             var answers = _serverConnection.GetSurveyAnswers(QuestionId);
 
             foreach (var answer in answers)

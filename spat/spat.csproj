@@ -157,6 +157,7 @@
     <Content Include="Scripts\CustomJS\mainFile.js" />
     <Content Include="Scripts\CustomJS\stylish-portfolio.js" />
     <Content Include="Scripts\CustomJS\stylish-portfolio.min.js" />
+    <Content Include="Scripts\CustomJS\SurveyAlgorithm.js" />
     <Content Include="sqlScripts\defaultQuestions.sql" />
     <Content Include="sqlScripts\spatDatabase.sql" />
     <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
