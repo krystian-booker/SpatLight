@@ -12,6 +12,15 @@ function hideTop() {
     $(".header").css("visibility", "visible");
 }
 
+function hideEnd() {
+    $('#endOfSurvey').hide();
+    $(".header").css("visibility", "invisible");
+}
+
+function hideNav() {
+    $("#myHeader").hide();
+}
+
 function goBack() {
     $("#banner-top").show();
     $("#resourcesSection").hide();

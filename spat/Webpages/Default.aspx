@@ -50,9 +50,9 @@
                 <em>Seronegative Arthritis Detection Tool</em>
             </h3>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
-                onclick="visible(question1); hideTop(); visible(myHeader); visible(tempProgressBar);" >Take Survey</a>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#resourcesSection" 
-                onclick="visible(resourcesSection); hideTop(); visible(myHeader);">Information</a>
+                onclick="visible(question1); hideTop(); visible(myHeader); visible(theSideNav);" >Take Survey</a>
+            <a class="btn btn-primary btn-xl" href="#resourcesSection" 
+                onclick="visible(resourcesSection); hideTop(); visible(myHeader); hideNav(); ">Information</a>
                 <a class="btn btn-primary" href="#endOfSurvey" onclick="visible(endOfSurvey); hideTop();">End</a>
             </div>
         </div> 
@@ -64,7 +64,7 @@
     <div class="container" id="questionsAndProgress">
         <div class="row">
             <!-- Left side of the page -->
-            <div class="col-sm-10">
+            <div class="col-sm">
 
               <!-- Container holding all of the questions -->
               <form runat="server">
@@ -74,11 +74,9 @@
             </div>
 
             <!-- Right side of the page -->
-            <div class="col-sm-2" id="theSideNav">
-                <div class="sidenav">
-                   <!-- Progress bar that scrolls and updates -->
-                    <img src="/Images/progress.png" id="tempProgressBar"/>
-                </div>
+            <div class="col-sm sidenav" id="theSideNav">
+                <!-- Progress bar that scrolls and updates -->
+                <progress class="vert" value="40" max="100" id="progressBar"></progress>
             </div>
         </div>
     </div>
@@ -158,6 +156,30 @@
         </div>
 
 
+        <!-- Information section four -->
+         <div class="row m-4">
+            <!-- Left side of the page -->
+            <div class="col-sm-2">
+                <!-- Where all of the images for the resources go -->
+                <img class="img-fluid vertical-center" src="https://images.pexels.com/photos/917486/pexels-photo-917486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+            </div>
+
+            <!-- Right side of the page -->
+            <div class="col-sm-10">
+                <!-- Where all of the text for the resources goes -->
+                <span>
+                    <a href="#"><h3>Information four</h3></a>
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                    qui officia deserunt mollit anim id est laborum."
+                </span>
+            </div>
+        </div>
+
+
         <!-- Button for going back to the main screen -->
         <a class="btn btn-primary btn-xl" href="#banner-top" 
                 onclick="goBack();">Go Back</a>
@@ -168,12 +190,16 @@
     <!-- End of the survey, results section -->
     <div class="container" id="endOfSurvey">
         <div class="row">
-            <div class="col-sm=12">
+            <div class="col-sm-12">
                 <h2>Survey results</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm=6">
+            <div class="col-sm-12 text-center mt-5 mb-5">
+                <h3 id="resultOutput">You should see your doctor</h3>
+            </div>
+        <div class="row">
+            <div class="col-sm-6">
                 <span>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -183,7 +209,7 @@
                     qui officia deserunt mollit anim id est laborum."
                 </span>
             </div>
-            <div class="col-sm=6">
+            <div class="col-sm-6">
                 <span>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -192,11 +218,17 @@
                     fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
                     qui officia deserunt mollit anim id est laborum."
                 </span>
+            </div>
+          </div>
+            <div class="row">
+                <div class="col-sm-12 mx-auto">
+                    <a class="btn btn-primary btn-xl mt-5" href="#resourcesSection" 
+                onclick="visible(resourcesSection); hideTop(); hideEnd();">Information</a>
+                </div>
             </div>
         </div>
     </div>
    
-
 
     <!-- Footer -->
     <footer class="footer text-center">
