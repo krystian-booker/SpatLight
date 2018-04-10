@@ -132,22 +132,36 @@
     <Content Include="Content\admindark.css" />
     <Content Include="Content\mainFile.css" />
     <Content Include="Content\stylish-portfolio.css" />
-    <Content Include="Images\chart.png" />
-    <Content Include="Images\Disease.png" />
-    <Content Include="Images\homo.png" />
-    <Content Include="Images\info.png" />
-    <Content Include="Images\loop.mov" />
-    <Content Include="Images\loop.mp4" />
-    <Content Include="Images\placeholder.png" />
-    <Content Include="Images\progress.png" />
-    <Content Include="Images\q1.PNG" />
-    <Content Include="Images\q2.PNG" />
-    <Content Include="Images\q3.PNG" />
-    <Content Include="Images\q4.PNG" />
-    <Content Include="Images\q5.PNG" />
-    <Content Include="Images\q6.PNG" />
-    <Content Include="Images\q7.PNG" />
-    <Content Include="Images\q8.PNG" />
+    <Content Include="Images\alt-logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\chart.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Disease.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\homo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\info.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\loop.mov">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\loop.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\placeholder.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\progress.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -184,7 +198,9 @@
     <Content Include="vendor\simple-line-icons\fonts\Simple-Line-Icons.svg" />
     <Content Include="Webpages\AdminStatistics.aspx" />
     <Content Include="Webpages\Default.aspx" />
-    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -194,6 +210,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\spatLight2018 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

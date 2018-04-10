@@ -33,33 +33,50 @@ namespace spat.Managers
         {
             foreach (var question in questionList)
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+                SqlConnection connection = null;
+                try
                 {
-                    con.Open();
-                    SqlCommand com = new SqlCommand("update SurveyQuestions set QuestionText = @questionText, QuestionDescription = @QuestionDescription where QuestionId = @QuestionId");
-                    com.Parameters.AddWithValue("@questionText", question.QuestionText);
-                    com.Parameters.AddWithValue("@QuestionDescription", question.QuestionDescription);
-                    com.Parameters.AddWithValue("@QuestionId", question.QuestionId);
-                    com.CommandType = CommandType.Text;
-                    com.Connection = con;
-                    com.ExecuteNonQuery();
+                    using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
+                    {
+                        connection.Open();
+                        SqlCommand com = new SqlCommand("update SurveyQuestions set QuestionText = @questionText, QuestionDescription = @QuestionDescription where QuestionId = @QuestionId");
+                        com.Parameters.AddWithValue("@questionText", question.QuestionText);
+                        com.Parameters.AddWithValue("@QuestionDescription", question.QuestionDescription);
+                        com.Parameters.AddWithValue("@QuestionId", question.QuestionId);
+                        com.CommandType = CommandType.Text;
+                        com.Connection = connection;
+                        com.ExecuteNonQuery();
+                    }
                 }
+                finally
+                {
+                    connection.Close();
+                }
+
             }
 
             foreach (var answer in AnswerList)
             {
-                using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+                SqlConnection connection = null;
+                try
                 {
-                    con.Open();
-                    SqlCommand com = new SqlCommand("update Answers set AnswerText = @answerText, AnswerDescription = @answerDescription, AnswerWeight = @answerWeight, AnswerImagePath = @answerImagePath where AnswerId = @answerId");
-                    com.Parameters.AddWithValue("@answerText", answer.AnswerText);
-                    com.Parameters.AddWithValue("@answerDescription", string.IsNullOrEmpty(answer.AnswerDescription) ? string.Empty : answer.AnswerDescription);
-                    com.Parameters.AddWithValue("@answerWeight", answer.AnswerWeight);
-                    com.Parameters.AddWithValue("@answerImagePath", string.IsNullOrEmpty(answer.AnswerImagePath) ? string.Empty : answer.AnswerImagePath);
-                    com.Parameters.AddWithValue("@answerId", answer.AnswerId);
-                    com.CommandType = CommandType.Text;
-                    com.Connection = con;
-                    com.ExecuteNonQuery();
+                    using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
+                    {
+                        connection.Open();
+                        SqlCommand com = new SqlCommand("update Answers set AnswerText = @answerText, AnswerDescription = @answerDescription, AnswerWeight = @answerWeight, AnswerImagePath = @answerImagePath where AnswerId = @answerId");
+                        com.Parameters.AddWithValue("@answerText", answer.AnswerText);
+                        com.Parameters.AddWithValue("@answerDescription", string.IsNullOrEmpty(answer.AnswerDescription) ? string.Empty : answer.AnswerDescription);
+                        com.Parameters.AddWithValue("@answerWeight", answer.AnswerWeight);
+                        com.Parameters.AddWithValue("@answerImagePath", string.IsNullOrEmpty(answer.AnswerImagePath) ? string.Empty : answer.AnswerImagePath);
+                        com.Parameters.AddWithValue("@answerId", answer.AnswerId);
+                        com.CommandType = CommandType.Text;
+                        com.Connection = connection;
+                        com.ExecuteNonQuery();
+                    }
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
@@ -90,51 +107,70 @@ namespace spat.Managers
             var dataTable = new DataTable();
             var statList = new List<Stats>();
 
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            SqlConnection connection = null;
+            try
             {
-
-                connection.Open();
-                var sqlCommand = new SqlCommand("select stats from Answers")
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
                 {
-                    CommandType = CommandType.Text,
-                    Connection = connection
-                };
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
-                {
-                    dataAdapter.Fill(dataTable);
+                    connection.Open();
+                    var sqlCommand = new SqlCommand("select stats from Answers")
+                    {
+                        CommandType = CommandType.Text,
+                        Connection = connection
+                    };
+
+                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
+                    {
+                        dataAdapter.Fill(dataTable);
+                    }
                 }
             }
+            finally
+            {
+                connection.Close();
+            }
+
 
             foreach (DataRow stats in dataTable.Rows)
             {
                 statList.Add(new Stats
-                    {
-                        statNum = (int)stats["stats"],
-                    });
+                {
+                    statNum = (int)stats["stats"],
+                });
             }
             return statList;
         }
 
         public DataTable ValidateLoginCredentials(string username, string password)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            SqlConnection connection = null;
+
+            try
             {
-                con.Open();
-
-                SqlCommand com = new SqlCommand("select 1 from Admin where id = @username and Password = @password");
-                com.Parameters.AddWithValue("@username", username);
-                com.Parameters.AddWithValue("@password", password);
-                com.CommandType = CommandType.Text;
-                com.Connection = con;
-
-                using (SqlDataAdapter da = new SqlDataAdapter(com))
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
                 {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
+                    connection.Open();
+
+                    SqlCommand com = new SqlCommand("select 1 from Admin where id = @username and Password = @password");
+                    com.Parameters.AddWithValue("@username", username);
+                    com.Parameters.AddWithValue("@password", password);
+                    com.CommandType = CommandType.Text;
+                    com.Connection = connection;
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(com))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
                 }
             }
+            finally
+            {
+                connection.Close();
+            }
+
         }
 
         #endregion Public
@@ -143,42 +179,58 @@ namespace spat.Managers
 
         private DataTable GetSurveyQuestionsRaw()
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            SqlConnection connection = null;
+            try
             {
-
-                connection.Open();
-                var sqlCommand = new SqlCommand("Select * from surveyQuestions")
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
                 {
-                    CommandType = CommandType.Text,
-                    Connection = connection
-                };
 
-                using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
-                {
-                    var dataTable = new DataTable();
-                    dataAdapter.Fill(dataTable);
-                    return dataTable;
+                    connection.Open();
+                    var sqlCommand = new SqlCommand("Select * from surveyQuestions")
+                    {
+                        CommandType = CommandType.Text,
+                        Connection = connection
+                    };
+
+                    using (SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand))
+                    {
+                        var dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        return dataTable;
+                    }
                 }
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
         private DataTable GetSurveyAnswersRaw(int questionId)
         {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings[1].ConnectionString))
+            SqlConnection connection = null;
+            try
             {
-                con.Open();
-
-                SqlCommand com = new SqlCommand("Select * from Answers where QuestionId = @questonId");
-                com.Parameters.AddWithValue("@questonId", questionId);
-                com.CommandType = CommandType.Text;
-                com.Connection = con;
-
-                using (SqlDataAdapter da = new SqlDataAdapter(com))
+                using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
                 {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    return dt;
+                    connection.Open();
+
+                    SqlCommand com = new SqlCommand("Select * from Answers where QuestionId = @questonId");
+                    com.Parameters.AddWithValue("@questonId", questionId);
+                    com.CommandType = CommandType.Text;
+                    com.Connection = connection;
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(com))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
                 }
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
