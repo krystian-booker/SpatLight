@@ -6,6 +6,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>SpAT LIGHT - Administration</title>
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
@@ -31,13 +33,17 @@
       </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a href="AdminPortal">Manage Questions</a>
                         </li>
                         <li class="nav-item">
                             <a href="#">Statistics</a>
                         </li>
-                        <li class="nav-item" hidden="yup">
-                            <a>Logout</a>
+
+                        <li class="nav-item">
+                            <a href="AdminPortal">Logout</a>
                         </li>
+                     </ul>
                 </div>
             </div>
         </nav>
@@ -46,12 +52,10 @@
         <div class="text-center">
             <div class="container">
                 <div class="row">
-                    <div class="login-form mx-auto">
-                        <div class="row">
+                    <div class="login-form mx-auto text-center">
+                        <div class="row stats">
+                            <h1>Statistics</h1>
                             <ul class="navbar-nav navbar-right ml-auto">
-                                <li class="nav-item">
-                                    <h1>Statistics</h1>
-                                </li>
                                 <li class="nav-item">
                                     <h2>Question one</h2>
                                     <h6>What is your gender?</h6>

@@ -21,12 +21,18 @@
       </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-right ml-auto">
-                    <li class="nav-item">
-                        <a href="AdminStatistics">Statistics</a>
-                    </li>
-                    <li class="nav-item" hidden="yup">
-                        <a>Logout</a>
-                    </li>
+                    <ul class="navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a href="AdminPortal">Manage Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="AdminStatistics">Statistics</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="AdminPortal">Logout</a>
+                        </li>
+                     </ul>
             </div>
 
         </div>
