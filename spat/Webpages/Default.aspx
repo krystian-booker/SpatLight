@@ -47,13 +47,17 @@
             <div class="container text-center my-auto">
             <h1 class="mb-1"><img src="/Images/alt-logo.png" class="img-fluid" id="spatLogo"/></h1>
             <h3 class="m-5">
-                <em>Seronegative Arthritis Detection Tool</em>
+                <em>Shining a Light on Seronegative Arthritis</em>
             </h3>
+
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
                 onclick="visible(question1); hideTop(); visible(myHeader); visible(theSideNav);" >Take Survey</a>
+
             <a class="btn btn-primary btn-xl" href="#resourcesSection" 
-                onclick="visible(resourcesSection); hideTop(); visible(myHeader); hideNav(); ">Information</a>
-                <a class="btn btn-primary" href="#endOfSurvey" onclick="visible(endOfSurvey); hideTop();">End</a>
+                onclick="visible(resourcesSection); hideTop(); visible(myHeader); enableScroll();">Resources</a>
+
+            <a class="btn btn-primary" href="#endOfSurvey" onclick="visible(endOfSurvey); hideTop(); visible(myHeader); enableScroll();">End</a>
+
             </div>
         </div> 
     </div>
@@ -84,104 +88,97 @@
 
 
     <div class="container" id="resourcesSection">
-        <!-- Information section one -->
-        <div class="row m-4">
+        <!-- Information link one -->
+        <div class="row mt-5">
             <!-- Left side of the page -->
             <div class="col-sm-2">
                 <!-- Where all of the images for the resources go -->
-                <img class="img-fluid vertical-center" src="https://images.pexels.com/photos/112392/pexels-photo-112392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                <img class="img-fluid" src="https://s3.amazonaws.com/files.enjin.com/1373471/mmc.PNG" />
             </div>
 
             <!-- Right side of the page -->
             <div class="col-sm-10">
                 <!-- Where all of the text for the resources goes -->
                 <span>
-                    <a href="#"><h3>Information One</h3></a>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
+                    <a href="https://www.merckmanuals.com/home/bone,-joint,-and-muscle-disorders/joint-disorders/spondyloarthritis">
+                        <h3>Spondyloarthritis Overview (Merck Manuals - Consumer Version)</h3>
+                    </a>
+                    Spondyloarthritis (SpA) causes joint pain similar to rheumatoid arthritis, 
+                    but typically cannot be detected by a blood test. It is a type of seronegative arthritis. 
                 </span>
             </div>
         </div>
 
 
-        <!-- Information section two -->
-         <div class="row m-4">
+        <!-- Information link two -->
+         <div class="row mt-5">
             <!-- Left side of the page -->
             <div class="col-sm-2">
                 <!-- Where all of the images for the resources go -->
-                <img class="img-fluid vertical-center" src="https://images.pexels.com/photos/924863/pexels-photo-924863.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                <img class="img-fluid" src="https://s3.amazonaws.com/files.enjin.com/1373471/mmp.PNG" />
             </div>
 
             <!-- Right side of the page -->
             <div class="col-sm-10">
                 <!-- Where all of the text for the resources goes -->
                 <span>
-                    <a href="#"><h3>Information Two</h3></a>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
+                    <a href="https://www.merckmanuals.com/professional/musculoskeletal-and-connective-tissue-disorders/joint-disorders/overview-of-seronegative-spondyloarthropathies">
+                        <h3>Overview of Seronegative Spondyloarthropathies (Merck Manuals - Professional Version)</h3>
+                    </a>
+                    The Merck Manuals are a reputable medical reference first published in 1899 
+                    by the pharmaceutical company Merck and Co. Since 2015 the Merck Manuals have been 
+                    published online in two versions, one for consumers and one for healthcare professionals. 
+                    This page is the professional version of the article above.
                 </span>
             </div>
         </div>
 
 
-        <!-- Information section three -->
-         <div class="row m-4">
+        <!-- Information link three -->
+         <div class="row mt-5 mb-3">
             <!-- Left side of the page -->
             <div class="col-sm-2">
                 <!-- Where all of the images for the resources go -->
-                <img class="img-fluid vertical-center" src="https://images.pexels.com/photos/917486/pexels-photo-917486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
+                <img class="img-fluid" src="https://s3.amazonaws.com/files.enjin.com/1373471/jh.PNG" />
             </div>
 
             <!-- Right side of the page -->
             <div class="col-sm-10">
                 <!-- Where all of the text for the resources goes -->
                 <span>
-                    <a href="#"><h3>Information Three</h3></a>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
+                    <a href="https://www.hopkinsarthritis.org/arthritis-info/ankylosing-spondylitis/">
+                        <h3>Ankylosing Spondylitis -  Johns Hopkins Arthritis Centre</h3>
+                    </a>
+                    Ankylosing Spondylitis is a common form of Spondyloarthritis (SpA). 
+                    This page from Johns Hopkins Arthritis Centre outlines the condition, 
+                    its diagnosis, and treatment options.
                 </span>
             </div>
         </div>
-
-
-        <!-- Information section four -->
-         <div class="row m-4">
-            <!-- Left side of the page -->
-            <div class="col-sm-2">
-                <!-- Where all of the images for the resources go -->
-                <img class="img-fluid vertical-center" src="https://images.pexels.com/photos/917486/pexels-photo-917486.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" />
-            </div>
-
-            <!-- Right side of the page -->
-            <div class="col-sm-10">
-                <!-- Where all of the text for the resources goes -->
-                <span>
-                    <a href="#"><h3>Information four</h3></a>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
-                </span>
+        
+       <%-- <div class="panel panel-default">
+            <div class="panel-heading">Information</div>
+            <div class="panel-body">
+                <p class="text-justify">
+                    Many cases of rheumatoid arthritis can be confirmed with a blood test that 
+                    detects the presence of certain antibodies. In some cases of arthritis, however, 
+                    a blood test cannot detect the relevant antibodies. In these cases of seronegative 
+                    arthritis a diagnosis must based on symptoms and medical history rather than 
+                    a positive blood serum test.
+                    <br/><br/>
+                    Understandably, the lack of definitive ‘proof’ of arthritis in the form of a 
+                    positive blood serum test may be frustrating, and could delay or complicate treatment.
+                    <br/><br/>
+                    With SpAT Light we hope to shine a light on seronegative arthritis to 
+                    speed diagnosis and improve patient outcomes.
+                </p>
             </div>
         </div>
+        --%>
 
 
         <!-- Button for going back to the main screen -->
-        <a class="btn btn-primary btn-xl" href="#banner-top" 
+        <a class="btn btn-primary btn-xl mt-4" href="#banner-top" 
                 onclick="goBack();">Go Back</a>
     </div>
 
@@ -194,36 +191,118 @@
                 <h2>Survey results</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 text-center mt-5 mb-5">
-                <h3 id="resultOutput">You should see your doctor</h3>
-            </div>
-        <div class="row">
-            <div class="col-sm-6">
-                <span>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
-                </span>
-            </div>
-            <div class="col-sm-6">
-                <span>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-                    qui officia deserunt mollit anim id est laborum."
-                </span>
-            </div>
-          </div>
+        
+    <div class="row">
+        <div class="col-sm text-center mt-5 mb-5">
+            <a href="#" class="btn btn-xl btn-primary" onclick="visible(possibleSpa)">Possible Spa</a>
+            <a href="#" class="btn btn-xl btn-primary" onclick="visible(likelySpa)">Likely Spa</a>
+            <a href="#" class="btn btn-xl btn-primary" onclick="visible(possiblePer)">Possible Per</a>
+            <a href="#" class="btn btn-xl btn-primary" onclick="visible(likelyPer)">Likely Per</a>
+        </div>
+    </div>
+
+        <!-- Not Likely SpA -->
+        <div id="notLikely">
             <div class="row">
-                <div class="col-sm-12 mx-auto">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h3 class="resultOutput text-success">Not Likely SpA</h3>
+                </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <span>
+                        Based on your replies, it appears you do <strong>NOT LIKELY</strong> have seronegative arthritis or SpA.
+                        <br /><br />
+                        Nevertheless, if you are experiencing joint symptoms lasting longer than 
+                        3 days, or several episodes of pain in a month, make an appointment see 
+                        your family doctor who may be able to offer a definitive diagnosis.
+                    </span>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <!-- Possible Axial SpA -->
+        <div id="possibleSpa">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h3 class="resultOutput text-warning">Possible Axial SpA</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>
+                            Based on your replies, it appears <strong>POSSIBLE</strong> that you may 
+                            have Axial SpA or another form of seronegative arthritis.
+                            <br /><br />
+                            Make an appointment to see your family doctor or a rheumatologist, who 
+                            may be able to offer a definitive diagnosis.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Likely Axial SpA -->
+        <div id="likelySpa">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h3 class="resultOutput text-danger">Likely Axial SpA</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>
+                            Based on your replies, it appears <strong>LIKELY</strong> that you may 
+                            have Axial SpA or another form of seronegative arthritis.
+                            <br /><br />
+                            Make an appointment to see your family doctor or a rheumatologist, who 
+                            may be able to offer a definitive diagnosis.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Possible Peripheral SpA -->
+        <div id="possiblePer">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h3 class="resultOutput text-warning">Possible Peripheral SpA</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>
+                            Based on your replies, it appears <strong>POSSIBLE</strong> that you 
+                            may have Peripheral SpA or another form of seronegative arthritis.
+                            <br /><br />
+                            Make an appointment to see your family doctor or a rheumatologist, who 
+                            may be able to offer a definitive diagnosis.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Likely Peripheral SpA -->
+        <div id="likelyPer">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h3 class="resultOutput text-danger">Likely Peripheral SpA</h3>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>
+                            Based on your replies, it appears <strong>LIKELY</strong> that you 
+                            may have Peripheral SpA or another form of seronegative arthritis.
+                            <br /><br />
+                            Make an appointment to see your family doctor or a rheumatologist, who 
+                            may be able to offer a definitive diagnosis.
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm mx-auto">
                     <a class="btn btn-primary btn-xl mt-5" href="#resourcesSection" 
-                onclick="visible(resourcesSection); hideTop(); hideEnd();">Information</a>
+                       onclick="visible(resourcesSection); hideTop(); hideEnd(); visible(myHeader);">Find out more</a>
                 </div>
             </div>
         </div>
@@ -233,7 +312,8 @@
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
-            <p class="text-muted small mb-0">Copyright &copy; SpAT Light 2018</p>
+            <p class="text-muted small mb-0">Copyright &copy; SpAT Light 2018  &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp; 
+                SpAT Light is the brainchild of <strong>Dr. William Bensen</strong> and is dedicated to his memory.</p>
         </div>
     </footer>
 

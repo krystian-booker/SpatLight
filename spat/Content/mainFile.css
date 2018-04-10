@@ -161,7 +161,7 @@ a {
 
 .header {
     padding: 10px 16px;
-    background: linear-gradient(90deg, #c2d1f0, #adc2eb);
+    background: linear-gradient(90deg, #2E709f, #1D709f);
     color: #f1f1f1;
     z-index: 5;
 }
@@ -250,4 +250,25 @@ a {
     top: 50%;
     height: 50px;
     width: 100%;
+}
+
+#resourcesSection {
+    padding-top: 100px;
+}
+
+label {
+    font-size: 21px;
+    padding-left: 5px;
+}
+
+input {
+    height: 17px;
+    width: 17px;
+}
+
+#possibleSpa,
+#likelySpa,
+#possiblePer,
+#likelyPer {
+    display: none;
 }

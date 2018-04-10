@@ -7,6 +7,10 @@ function visible(id) {
     $(id).fadeIn();
 }
 
+function enableScroll() {
+    $("body").css("overflow", "visible");
+}
+
 function hideTop() {
     $('#banner-top').hide();
     $(".header").css("visibility", "visible");
@@ -25,6 +29,7 @@ function goBack() {
     $("#banner-top").show();
     $("#resourcesSection").hide();
     $("#myHeader").hide();
+    $("body").css("overflow", "hidden");
 
 }
 
