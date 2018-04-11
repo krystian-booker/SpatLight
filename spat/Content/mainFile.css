@@ -223,6 +223,7 @@ a {
     top: 0;
     min-width: 100%;
     min-height: 100%;
+    filter: blur(5px);
 }
 
 /* Add some content over top of the video/page */
@@ -264,4 +265,8 @@ label {
 input {
     height: 17px;
     width: 17px;
+}
+
+#endOfSurvey {
+    min-height: 600px;
 }

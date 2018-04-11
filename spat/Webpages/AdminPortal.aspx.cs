@@ -516,6 +516,7 @@ namespace spat.Webpages
                 },
             };
             _serverConnection.SaveSurveyQuestions(questionList, answerList);
+            GenerateAdminPortal();
         }
     }
 }
