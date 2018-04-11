@@ -163,7 +163,7 @@
     <!-- End of the survey, results section -->
     <div class="container" id="endOfSurvey">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 text-center mt-5 mb-5">
                 <h2>Survey results</h2>
             </div>
         </div>
@@ -270,9 +270,8 @@
         
         <!-- Button for going to the resources page -->
         <div class="row">
-            <div class="col-sm mx-auto">
-                <a class="btn btn-primary btn-xl mt-5" href="#resourcesSection" 
-                   onclick="visible(resourcesSection); hideTop(); hideEnd(); visible(myHeader);">Find out more</a>
+            <div class="col-sm-12 text-center mt-5 mb-5">
+                <a class="btn btn-primary btn-xl mt-5" href="#resourcesSection" onclick="visible(resourcesSection); hideTop(); hideEnd(); visible(myHeader);">Find out more</a>
             </div>
         </div>
     </div>
