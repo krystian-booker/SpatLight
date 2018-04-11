@@ -78,7 +78,7 @@
             <!-- Right side of the page -->
             <div class="col-sm sidenav" id="theSideNav">
                 <!-- Progress bar that scrolls and updates -->
-                <progress class="vert" value="40" max="100" id="progressBar"></progress>
+                <progress class="vert" value="0" max="100" id="progressBar"></progress>
             </div>
         </div>
     </div>

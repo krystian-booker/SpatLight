@@ -313,12 +313,14 @@ function Calculate() {
         tally1 += questionTwelveResult;
 
         if (tally1 > 2) {
+            document.getElementById('progressBar').value = 100;
             LikelyAxial = true;
             PossibleAxial = false;
             LikelySpa = false;
             PossibleSpa = false;
         }
         else if (tally1 > 1) {
+            document.getElementById('progressBar').value = 50;
             LikelyAxial = false;
             PossibleAxial = true;
             LikelySpa = false;
@@ -344,12 +346,14 @@ function Calculate() {
 
         //add lower extermity joint pain
         if (tally2 > 1) {
+            document.getElementById('progressBar').value = 100;
             LikelyAxial = false;
             PossibleAxial = false;
             LikelySpa = true;
             PossibleSpa = false;
         }
         else if (tally2 > 0.5) {
+            document.getElementById('progressBar').value = 50;
             LikelyAxial = false;
             PossibleAxial = false;
             LikelySpa = false;
