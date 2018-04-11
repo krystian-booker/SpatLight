@@ -55,9 +55,6 @@
 
             <a class="btn btn-primary btn-xl" href="#resourcesSection" 
                 onclick="visible(resourcesSection); hideTop(); visible(myHeader); enableScroll();">Resources</a>
-
-            <a class="btn btn-primary" href="#endOfSurvey" onclick="visible(endOfSurvey); hideTop(); visible(myHeader); enableScroll();">End</a>
-
             </div>
         </div> 
     </div>
@@ -155,27 +152,6 @@
                 </span>
             </div>
         </div>
-        
-       <%-- <div class="panel panel-default">
-            <div class="panel-heading">Information</div>
-            <div class="panel-body">
-                <p class="text-justify">
-                    Many cases of rheumatoid arthritis can be confirmed with a blood test that 
-                    detects the presence of certain antibodies. In some cases of arthritis, however, 
-                    a blood test cannot detect the relevant antibodies. In these cases of seronegative 
-                    arthritis a diagnosis must based on symptoms and medical history rather than 
-                    a positive blood serum test.
-                    <br/><br/>
-                    Understandably, the lack of definitive ‘proof’ of arthritis in the form of a 
-                    positive blood serum test may be frustrating, and could delay or complicate treatment.
-                    <br/><br/>
-                    With SpAT Light we hope to shine a light on seronegative arthritis to 
-                    speed diagnosis and improve patient outcomes.
-                </p>
-            </div>
-        </div>
-        --%>
-
 
         <!-- Button for going back to the main screen -->
         <a class="btn btn-primary btn-xl mt-4" href="#banner-top" 
@@ -191,15 +167,6 @@
                 <h2>Survey results</h2>
             </div>
         </div>
-        
-    <div class="row">
-        <div class="col-sm text-center mt-5 mb-5">
-            <a href="#" class="btn btn-xl btn-primary" onclick="visible(possibleSpa)">Possible Spa</a>
-            <a href="#" class="btn btn-xl btn-primary" onclick="visible(likelySpa)">Likely Spa</a>
-            <a href="#" class="btn btn-xl btn-primary" onclick="visible(possiblePer)">Possible Per</a>
-            <a href="#" class="btn btn-xl btn-primary" onclick="visible(likelyPer)">Likely Per</a>
-        </div>
-    </div>
 
         <!-- Not Likely SpA -->
         <div id="notLikely">

@@ -265,10 +265,3 @@ input {
     height: 17px;
     width: 17px;
 }
-
-#possibleSpa,
-#likelySpa,
-#possiblePer,
-#likelyPer {
-    display: none;
-}

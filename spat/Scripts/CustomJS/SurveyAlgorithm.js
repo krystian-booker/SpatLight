@@ -14,6 +14,10 @@ var questionTenCResult = 0;
 var questionElevenResult = 0;
 var questionTwelveResult = 0;
 var questionThirteenResult = 0;
+var LikelyAxial = false;
+var PossibleAxial = false;
+var LikelySpa = false;
+var PossibleSpa = false;
 
 function Question1() {
     var list = document.getElementById("answerGroup1");
@@ -142,7 +146,7 @@ function Question7() {
         }
     }
     if (selected) {
-        if (selected.value == 'Worse') {
+        if (selected.value == 'Improved') {
             questionSevenResult = 1;
         }
         else {
@@ -295,8 +299,7 @@ function Question13() {
 
 function Calculate() {
     //Axial
-    if (questionFiveResult && questionThreeResult) 
-    {
+    if (questionFiveResult && questionThreeResult) {
         var tally1 = questionOneResult;
         tally1 += questionSixResult;
         tally1 += questionSevenResult;
@@ -310,10 +313,16 @@ function Calculate() {
         tally1 += questionTwelveResult;
 
         if (tally1 > 2) {
-            console.log("Likely Axial");
+            LikelyAxial = true;
+            PossibleAxial = false;
+            LikelySpa = false;
+            PossibleSpa = false;
         }
         else if (tally1 > 1) {
-            console.log("Possible Axial");
+            LikelyAxial = false;
+            PossibleAxial = true;
+            LikelySpa = false;
+            PossibleSpa = false;
         }
     }
 
@@ -334,11 +343,36 @@ function Calculate() {
         tally2 += questionElevenResult;
 
         //add lower extermity joint pain
-        if (tally2 > 0.5) {
-            console.log("Possible SpA");
+        if (tally2 > 1) {
+            LikelyAxial = false;
+            PossibleAxial = false;
+            LikelySpa = true;
+            PossibleSpa = false;
         }
-        else if (tally2 > 1) {
-            console.log("Likely SpA");
+        else if (tally2 > 0.5) {
+            LikelyAxial = false;
+            PossibleAxial = false;
+            LikelySpa = false;
+            PossibleSpa = true;
         }
+    }
+}
+
+function ShowResults() {
+    $('#theSideNav').hide();
+    if (LikelyAxial) {
+        $('#likelyPer').show();
+    }
+    else if (PossibleAxial) {
+        $('#possiblePer').show();
+    }
+    else if (LikelySpa) {
+        $('#likelySpa').show();
+    }
+    else if (PossibleSpa) {
+        $('#possibleSpa').show();
+    }
+    else {
+        $('#notLikely').show();
     }
 }

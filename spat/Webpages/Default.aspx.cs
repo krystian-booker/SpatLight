@@ -97,7 +97,6 @@ namespace spat
         {
             var previousQuestionId = question.QuestionId;
             var nextQuestionId = question.QuestionId;
-            //can you add something here that totals the number of questions so that I can dynamically put it into the code?
             previousQuestionId--;
             nextQuestionId++;
 
@@ -118,8 +117,18 @@ namespace spat
                 surveyAnswerList,
                 new LiteralControl("</div>"),
                 new LiteralControl("</p>"),
-                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" style=\"margin: 5px;\">Previous</a>", previousQuestionId)),
-                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});Question{1}();\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId, question.QuestionId)),
+                new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" style=\"margin: 5px;\">Previous</a>", previousQuestionId))
+            };
+
+            LiteralControl buttonNextFinish = null;
+            if (question.QuestionId == 13)
+                buttonNextFinish = new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#endOfSurvey\" onclick=\"visible(endOfSurvey); hideTop(); visible(myHeader); enableScroll(); ShowResults()\">&nbsp;&nbsp;&nbsp; End &nbsp;&nbsp;&nbsp;</a>"));
+            else
+                buttonNextFinish = new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});Question{1}();\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId, question.QuestionId));
+
+            var bottomHtmlList = new List<object>
+            {
+                buttonNextFinish,
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
                 new LiteralControl("</div>"),
@@ -143,6 +152,8 @@ namespace spat
                 new LiteralControl("</div>"),
                 new LiteralControl("</section>"),
             };
+            htmlObjectList.AddRange(bottomHtmlList);
+
             PlaceUIObjects(htmlObjectList);
         }
 

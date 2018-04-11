@@ -47,6 +47,11 @@ function hide() {
     $('#question11').hide();
     $('#question12').hide();
     $('#question13').hide();
+    $('#possibleSpa').hide();
+    $('#likelySpa').hide();
+    $('#possiblePer').hide();
+    $('#likelyPer').hide();
+    $('#notLikely').hide();
 }
 
 function showStuff() {
