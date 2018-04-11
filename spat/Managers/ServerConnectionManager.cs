@@ -63,11 +63,10 @@ namespace spat.Managers
                     using (connection = new SqlConnection(ConfigurationManager.ConnectionStrings["spatLightConnectionString"].ConnectionString))
                     {
                         connection.Open();
-                        SqlCommand com = new SqlCommand("update Answers set AnswerText = @answerText, AnswerDescription = @answerDescription, AnswerWeight = @answerWeight, AnswerImagePath = @answerImagePath where AnswerId = @answerId");
+                        SqlCommand com = new SqlCommand("update Answers set AnswerText = @answerText, AnswerDescription = @answerDescription, AnswerWeight = @answerWeight where AnswerId = @answerId");
                         com.Parameters.AddWithValue("@answerText", answer.AnswerText);
                         com.Parameters.AddWithValue("@answerDescription", string.IsNullOrEmpty(answer.AnswerDescription) ? string.Empty : answer.AnswerDescription);
                         com.Parameters.AddWithValue("@answerWeight", answer.AnswerWeight);
-                        com.Parameters.AddWithValue("@answerImagePath", string.IsNullOrEmpty(answer.AnswerImagePath) ? string.Empty : answer.AnswerImagePath);
                         com.Parameters.AddWithValue("@answerId", answer.AnswerId);
                         com.CommandType = CommandType.Text;
                         com.Connection = connection;

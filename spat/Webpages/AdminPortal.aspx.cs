@@ -175,6 +175,10 @@ namespace spat.Webpages
             Question10Weight4.Text = answers[3].AnswerWeight;
             Question10Answer4Description.Text = answers[3].AnswerDescription;
 
+            Question10Answer5.Text = answers[4].AnswerText;
+            Question10Weight5.Text = answers[4].AnswerWeight;
+            Question10Answer5Description.Text = answers[4].AnswerDescription;
+
 
             //Question 11
             Question11Text.Text = surveyQuestions[10].QuestionText;
@@ -439,7 +443,7 @@ namespace spat.Webpages
                     AnswerId = 21,
                     AnswerText =  Question10Answer5.Text,
                     AnswerWeight = Question10Weight5.Text,
-                    AnswerDescription = Question10Answer4Description.Text
+                    AnswerDescription = Question10Answer5Description.Text
                 },
                 new AnswerModel
                 {
