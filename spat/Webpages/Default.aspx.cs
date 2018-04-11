@@ -342,9 +342,19 @@ namespace spat
                     new LiteralControl("<h4 class=\"modal-title\">Why are we asking this?</h4>"),
                     new LiteralControl("<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>"),
                     new LiteralControl("</div>"),
+                };
+
+                var imageBody = new List<object>
+                {
                     new LiteralControl("<div class=\"modal-body\">"),
                     new LiteralControl(string.Format("<p class=\"insideModal\">{0}<br/><img src=\"{1}\" height=\"217\" width=\"400\"/></p>", answer.AnswerDescription, answer.AnswerImagePath)),
-                    new LiteralControl("</div>"),
+                    new LiteralControl("</div>")
+                };
+
+                htmlObjectList.AddRange(imageBody);
+
+                var htmlBottom = new List<object>
+                {
                     new LiteralControl("<div class=\"modal-footer\">"),
                     new LiteralControl("<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>"),
                     new LiteralControl("</div>"),
@@ -352,6 +362,7 @@ namespace spat
                     new LiteralControl("</div>"),
                     new LiteralControl("</div>"),
                 };
+                htmlObjectList.AddRange(htmlBottom);
                 PlaceUIObjects(htmlObjectList);
             }
 
