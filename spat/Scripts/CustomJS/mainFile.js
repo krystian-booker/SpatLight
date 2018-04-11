@@ -30,6 +30,7 @@ function goBack() {
     $("#resourcesSection").hide();
     $("#myHeader").hide();
     $("body").css("overflow", "hidden");
+    hide();
 
 }
 

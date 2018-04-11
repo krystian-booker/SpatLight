@@ -122,7 +122,7 @@ namespace spat
 
             LiteralControl buttonNextFinish = null;
             if (question.QuestionId == 13)
-                buttonNextFinish = new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#endOfSurvey\" onclick=\"visible(endOfSurvey); hideTop(); visible(myHeader); enableScroll(); ShowResults()\">&nbsp;&nbsp;&nbsp; End &nbsp;&nbsp;&nbsp;</a>"));
+                buttonNextFinish = new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#endOfSurvey\" onclick=\"visible(endOfSurvey); hideTop(); visible(myHeader); ShowResults()\">&nbsp;&nbsp;&nbsp; End &nbsp;&nbsp;&nbsp;</a>"));
             else
                 buttonNextFinish = new LiteralControl(string.Format("<a class=\"btn btn-dark btn-xl js-scroll-trigger\" href=\"#question{0}\" onclick=\"visible(question{0});Question{1}();\">&nbsp;&nbsp;&nbsp; Next &nbsp;&nbsp;&nbsp;</a>", nextQuestionId, question.QuestionId));
 
