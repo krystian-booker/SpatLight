@@ -61,6 +61,13 @@ namespace spat.Webpages
 
         private void GenerateAdminPortal()
         {
+            manage.Attributes.Clear();
+            manage.HRef = "#";
+            stats.Attributes.Clear();
+            stats.HRef = "AdminStatistics";
+            login.InnerText = "Logout";
+            login.HRef = "AdminPortal";
+
             signIn.Visible = false;
             QuestionHeader.Visible = true;
             Questions.Visible = true;
@@ -509,6 +516,7 @@ namespace spat.Webpages
                 },
             };
             _serverConnection.SaveSurveyQuestions(questionList, answerList);
+            GenerateAdminPortal();
         }
     }
 }

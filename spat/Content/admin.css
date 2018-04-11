@@ -314,3 +314,18 @@ i {
         border: 1px solid #0f63ef;
         color: #0f63ef;
     }
+
+
+.stats .nav-item {
+    color: black;
+    background-color: #359;
+    margin: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    list-style-type: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.stats h2, h6 {
+    color: white;
+}

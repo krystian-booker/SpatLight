@@ -21,12 +21,17 @@
       </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav navbar-right ml-auto">
-                    <li class="nav-item">
-                        <a href="AdminStatistics">Statistics</a>
-                    </li>
-                    <li class="nav-item" hidden="yup">
-                        <a>Logout</a>
-                    </li>
+                    <ul class="navbar-nav navbar-right ml-auto">
+                        <li class="nav-item">
+                            <a href="AdminPortal" id="manage" runat="server" class="d-none">Manage Questions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="AdminStatistics" id="stats" runat="server" class="d-none">Statistics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="AdminPortal" runat="server" id="login">Login</a>
+                        </li>
+                     </ul>
             </div>
 
         </div>
