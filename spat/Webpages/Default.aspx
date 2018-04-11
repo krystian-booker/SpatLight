@@ -23,7 +23,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" />
 
     <!-- Custom CSS and Icon -->
-    <link rel='icon' href='/Images/favicon.ico' type='image/x-icon'/ >
+    <link rel='icon' href='/Images/favicon.ico' type='image/x-icon' />
     <link href="../../Content/mainFile.css" rel="stylesheet" />
 
 </head>
@@ -31,10 +31,10 @@
 
     <!-- Nav bar that scrolls -->
     <div class="header" id="myHeader">
-        <img src="/Images/logo.png" height="70" id="mainLogo"/>
+        <img src="/Images/logo.png" height="70" id="mainLogo" />
     </div>
-    
-    
+
+
 
     <!-- Header -->
     <div id="banner-top">
@@ -45,21 +45,22 @@
 
         <div class="content">
             <div class="container text-center my-auto">
-            <h1 class="mb-1"><img src="/Images/alt-logo.png" class="img-fluid" id="spatLogo"/></h1>
-            <h3 class="m-5">
-                <em>Shining a Light on Seronegative Arthritis</em>
-            </h3>
+                <h1 class="mb-1">
+                    <img src="/Images/alt-logo.png" class="img-fluid" id="spatLogo" /></h1>
+                <h3 class="m-5">
+                    <em>Shining a Light on Seronegative Arthritis</em>
+                </h3>
 
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1" 
-                onclick="visible(question1); hideTop(); visible(myHeader); visible(theSideNav);" >Take Survey</a>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="#question1"
+                    onclick="visible(question1); hideTop(); visible(myHeader); visible(theSideNav);">Take Survey</a>
 
-            <a class="btn btn-primary btn-xl" href="#resourcesSection" 
-                onclick="visible(resourcesSection); hideTop(); visible(myHeader); enableScroll();">Resources</a>
+                <a class="btn btn-primary btn-xl" href="#resourcesSection"
+                    onclick="visible(resourcesSection); hideTop(); visible(myHeader); enableScroll();">Resources</a>
             </div>
-        </div> 
+        </div>
     </div>
 
-    
+
 
     <!-- Two columns on the page, right and left. Right is the progress bar, left is the content. -->
     <div class="container" id="questionsAndProgress">
@@ -67,11 +68,11 @@
             <!-- Left side of the page -->
             <div class="col-sm">
 
-              <!-- Container holding all of the questions -->
-              <form runat="server">
-                  <div id="allQuestions" runat="server">
-                  </div>
-              </form>
+                <!-- Container holding all of the questions -->
+                <form runat="server">
+                    <div id="allQuestions" runat="server">
+                    </div>
+                </form>
             </div>
 
             <!-- Right side of the page -->
@@ -108,7 +109,7 @@
 
 
         <!-- Information link two -->
-         <div class="row mt-5">
+        <div class="row mt-5">
             <!-- Left side of the page -->
             <div class="col-sm-2">
                 <!-- Where all of the images for the resources go -->
@@ -132,7 +133,7 @@
 
 
         <!-- Information link three -->
-         <div class="row mt-5 mb-3">
+        <div class="row mt-5 mb-3">
             <!-- Left side of the page -->
             <div class="col-sm-2">
                 <!-- Where all of the images for the resources go -->
@@ -153,9 +154,42 @@
             </div>
         </div>
 
+        <!-- Information -->
+        <div class="row mt-5 mb-3">
+            <!-- Right side of the page -->
+            <div class="col-sm-10">
+                <!-- Where all of the text for the resources goes -->
+                <span>
+                    <h3>What is Seronegative Arthritis?</h3>
+                    Rheumatoid arthritis is often confirmed with a blood test that 
+                    detects the presence of certain antibodies. 
+                    In cases of seronegative arthritis, however, 
+                    a blood test cannot detect the relevant antibodies.
+                    A diagnosis must be based on symptoms and medical history.
+                </span>
+            </div>
+        </div>
+
+        <!-- Information -->
+        <div class="row mt-5 mb-3">
+            <!-- Right side of the page -->
+            <div class="col-sm-10">
+                <!-- Where all of the text for the resources goes -->
+                <span>
+                    <h3>What is SpA?</h3>
+                        Spondyloarthropathy, spondyloarthritis, 
+                    or spondylitis (SpA) is a group of diseases 
+                    that involve joint inflammation, similar to 
+                    rheumatoid arthritis, but which typically 
+                    cannot be detected with a blood test. SpA is 
+                    a form of seronegative arthritis.
+                </span>
+            </div>
+        </div>
+
         <!-- Button for going back to the main screen -->
-        <a class="btn btn-primary btn-xl mt-4" href="#banner-top" 
-                onclick="goBack();">Go Back</a>
+        <a class="btn btn-primary btn-xl mt-4" href="#banner-top"
+            onclick="goBack();">Go Back</a>
     </div>
 
 
@@ -174,20 +208,20 @@
                 <div class="col-sm-12 text-center mt-5 mb-5">
                     <h3 class="resultOutput text-success">Not Likely SpA</h3>
                 </div>
-            <div class="row">
-                <div class="col-sm-12 text-center">
-                    <span>
-                        Based on your replies, it appears you do <strong>NOT LIKELY</strong> have seronegative arthritis or SpA.
-                        <br /><br />
-                        Nevertheless, if you are experiencing joint symptoms lasting longer than 
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <span>Based on your replies, it appears you do <strong>NOT LIKELY</strong> have seronegative arthritis or SpA.
+                        <br />
+                            <br />
+                            Nevertheless, if you are experiencing joint symptoms lasting longer than 
                         3 days, or several episodes of pain in a month, make an appointment see 
                         your family doctor who may be able to offer a definitive diagnosis.
-                    </span>
+                        </span>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
-        
+
         <!-- Possible Axial SpA -->
         <div id="possibleSpa">
             <div class="row">
@@ -196,10 +230,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <span>
-                            Based on your replies, it appears <strong>POSSIBLE</strong> that you may 
+                        <span>Based on your replies, it appears <strong>POSSIBLE</strong> that you may 
                             have Axial SpA or another form of seronegative arthritis.
-                            <br /><br />
+                            <br />
+                            <br />
                             Make an appointment to see your family doctor or a rheumatologist, who 
                             may be able to offer a definitive diagnosis.
                         </span>
@@ -207,7 +241,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Likely Axial SpA -->
         <div id="likelySpa">
             <div class="row">
@@ -216,10 +250,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <span>
-                            Based on your replies, it appears <strong>LIKELY</strong> that you may 
+                        <span>Based on your replies, it appears <strong>LIKELY</strong> that you may 
                             have Axial SpA or another form of seronegative arthritis.
-                            <br /><br />
+                            <br />
+                            <br />
                             Make an appointment to see your family doctor or a rheumatologist, who 
                             may be able to offer a definitive diagnosis.
                         </span>
@@ -227,7 +261,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Possible Peripheral SpA -->
         <div id="possiblePer">
             <div class="row">
@@ -236,10 +270,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <span>
-                            Based on your replies, it appears <strong>POSSIBLE</strong> that you 
+                        <span>Based on your replies, it appears <strong>POSSIBLE</strong> that you 
                             may have Peripheral SpA or another form of seronegative arthritis.
-                            <br /><br />
+                            <br />
+                            <br />
                             Make an appointment to see your family doctor or a rheumatologist, who 
                             may be able to offer a definitive diagnosis.
                         </span>
@@ -247,7 +281,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Likely Peripheral SpA -->
         <div id="likelyPer">
             <div class="row">
@@ -256,10 +290,10 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <span>
-                            Based on your replies, it appears <strong>LIKELY</strong> that you 
+                        <span>Based on your replies, it appears <strong>LIKELY</strong> that you 
                             may have Peripheral SpA or another form of seronegative arthritis.
-                            <br /><br />
+                            <br />
+                            <br />
                             Make an appointment to see your family doctor or a rheumatologist, who 
                             may be able to offer a definitive diagnosis.
                         </span>
@@ -267,7 +301,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Button for going to the resources page -->
         <div class="row">
             <div class="col-sm-12 text-center mt-5 mb-5">
@@ -275,13 +309,15 @@
             </div>
         </div>
     </div>
-   
+
 
     <!-- Footer -->
     <footer class="footer text-center">
         <div class="container">
-            <p class="text-muted small mb-0">Copyright &copy; SpAT Light 2018  &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp; 
-                SpAT Light is the brainchild of <strong>Dr. William Bensen</strong> and is dedicated to his memory.</p>
+            <p class="text-muted small mb-0">
+                Copyright &copy; SpAT Light 2018  &nbsp;&nbsp;<strong>|</strong>&nbsp;&nbsp; 
+                SpAT Light is the brainchild of <strong>Dr. William Bensen</strong> and is dedicated to his memory.
+            </p>
         </div>
     </footer>
 
