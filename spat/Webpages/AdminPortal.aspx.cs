@@ -14,8 +14,8 @@ namespace spat.Webpages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            _serverConnection = new ServerConnectionManager();
-            tbUserName.Focus();
+             _serverConnection = new ServerConnectionManager();
+             tbUserName.Focus();
         }
 
         protected void Login_Click(object sender, EventArgs e)
@@ -61,6 +61,13 @@ namespace spat.Webpages
 
         private void GenerateAdminPortal()
         {
+            manage.Attributes.Clear();
+            manage.HRef = "#";
+            stats.Attributes.Clear();
+            stats.HRef = "AdminStatistics";
+            login.InnerText = "Logout";
+            login.HRef = "AdminPortal";
+
             signIn.Visible = false;
             QuestionHeader.Visible = true;
             Questions.Visible = true;
