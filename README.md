@@ -1,2 +1,2 @@
-# spatMilk
+# SpatLight
 SpatLight
