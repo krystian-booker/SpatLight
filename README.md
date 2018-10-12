@@ -1,2 +1,2 @@
 # spatMilk
-spatSurvey
+SpatLight
