@@ -116,11 +116,11 @@ To manage survey questions, select ​ **Manage Questions** ​​ in the top ri
 page.
 ![Manage Questions](https://github.com/krystianBooker/SpatLight/blob/master/spatLightImages/manageQuestions.png)
 You have the options to:
-● Edit Question text
-● Edit Question Description text
-● Edit Answer option text
-● Change the point weight of questions (affects screening algorithm)
-● Add an answer option
+- Edit Question text
+- Edit Question Description text
+- Edit Answer option text
+- Change the point weight of questions (affects screening algorithm)
+- Add an answer option
 _Note: Because of the sensitive algorithm we use to identify possible SpA, functionality to add
 or delete questions is not currently available_
 
@@ -139,23 +139,23 @@ statistics.
 
 This application should be considered a Prototype / Proof of Concept rather than a finished,
 deployable product. There are some bugs and incomplete features.
-● Some of the explanatory text and links to resources should be considered
+- Some of the explanatory text and links to resources should be considered
 placeholders. They are accurate / reliable information to the best of our knowledge,
 but our client will need to have final say on all information / resources provided.
-● There is a bug where if you change question text in the admin portal it can reverse
+- There is a bug where if you change question text in the admin portal it can reverse
 the Survey Question with the Why Are We Asking This explanation.
-● Once the application has determined that you have Likely SpA, going back and
+- Once the application has determined that you have Likely SpA, going back and
 changing your answers will not currently change this result – this will need to be fixed
 before final deployment.
-● Our algorithm for determining SpA is quite sophisticated. Initial testing shows it to be
+- Our algorithm for determining SpA is quite sophisticated. Initial testing shows it to be
 accurate according to our understanding of what it should be. However, there may be
 specific instances where the application would provide a different diagnosis than a
 doctor. Complete testing of this feature will require additional input from our clients,
 and possibly some sort of clinical trial with actual patients.
-● The app is still not as ‘user friendly’ on small screens as it needs to be. Font size
+- The app is still not as ‘user friendly’ on small screens as it needs to be. Font size
 likely needs to be increased further, and the homunculus (joint map) can be a
 challenge on small screens.
-● There are joints that need to be added to the homunculus (joint map), specifically
+- There are joints that need to be added to the homunculus (joint map), specifically
 back and neck joints. These points exist in code but are currently hidden from users.
 The homunculus diagram likely needs to be reworked/resized somewhat to
 accommodate these new points.
