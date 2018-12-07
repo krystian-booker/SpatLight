@@ -161,24 +161,3 @@ The homunculus diagram likely needs to be reworked/resized somewhat to
 accommodate these new points.
 
 
-## Future Plans
-
-Our group is currently discussing the future of this project and who will be continuing work on
-the project. These discussions are ongoing. It seems likely that some ​ _but not all_ ​ members
-will continue working on this project.
-If no members choose to continue with the project, then we are willing to hand off the project
-to other students at Mohawk and / or to the client to continue the project. Again, though, it
-seems likely that at least some of our members will continue to work on the project in the
-medium term.
-
-Future Features to Add
-The client would like to add some sort of chat forum for users to interact with each other,
-share support information and resources. There are plugins that can accomplish this fairly
-easily we think, although a chat forum would require ongoing moderation.
-Online resources for SpA are fragmented and confusing. Our resources page could
-distinguish itself by prioritizing the best online resources, offering explanatory summaries,
-and in some cases creating original content designed for ordinary people. At the moment we
-offer the ability to share resources. Evaluating and summarizing content for users (curating
-content) would add a lot of value to SpAT Light.
-
-
